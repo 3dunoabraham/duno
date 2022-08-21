@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
 
@@ -29,14 +28,14 @@ const getUserTelegramId = async (uniqueString) => {
   return userUpdate.message.from.id;
 };
 
-type Image = {
+type Link = {
   id: number,
   href: string,
   src: string,
   name: string,
 }
 
-function Gallery({ images }: { images: Image[]}) {
+function Gallery({ links }: { links: Link[]}) {
   return (
     <div>
       <h1 onClick={() => { test() }}>Title</h1>
@@ -44,9 +43,9 @@ function Gallery({ images }: { images: Image[]}) {
       
       {/* Images will go here */}
       <div className="flex-column">
-        {images.map((image) => (
-          <div key={image.id}>
-            <BlurImage image={image} />
+        {links.map((link) => (
+          <div key={link.id}>
+            <CustomLink link={link} />
           </div>
         ))}
       </div>
@@ -59,9 +58,13 @@ function Image2() {
     <i>Text</i>
   )
 }
-function BlurImage({ image }: { image: Image}) {
+function CustomLink({ link }: { link: Link}) {
   return (
-    <i>{image.name}</i>
+    <a href={link.href}
+      className="tx-secondary tx-xl pa-4  block"
+      target="_blank">
+        {link.name}
+    </a>
   )
 }
 
@@ -84,7 +87,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      images: data,
+      links: data,
     },
   }
 }
