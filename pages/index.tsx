@@ -11,7 +11,7 @@ const getBotUpdates = () =>
   fetch(
     "https://api.telegram.org/bot5389030729:AAF9fnNmzr2wf-B0PMgax0yDowu0DUILZYQ/getUpdates"
   ).then((response) => {
-  console.log("result", result)
+  console.log("response", response)
   return response.json()});
 
 const getUserTelegramId = async (uniqueString) => {
@@ -61,7 +61,7 @@ function Image2() {
 function CustomLink({ link }: { link: Link}) {
   return (
     <a href={link.href}
-      className="tx-secondary tx-xl pa-4  block"
+      className="text-blue-400 tx-xl pa-4  block"
       target="_blank">
         {link.name}
     </a>
