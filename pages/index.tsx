@@ -14,19 +14,19 @@ const getBotUpdates = () =>
   console.log("response", response)
   return response.json()});
 
-const getUserTelegramId = async (uniqueString) => {
-  const { result } = await getBotUpdates();
+// const getUserTelegramId = async (uniqueString) => {
+//   const { result } = await getBotUpdates();
 
-  const messageUpdates = result.filter(
-    ({ message }) => message?.text !== undefined
-  );
+//   const messageUpdates = result.filter(
+//     ({ message }) => message?.text !== undefined
+//   );
 
-  const userUpdate = messageUpdates.find(
-    ({ message }) => message.text === `/start ${uniqueString}`
-  );
+//   const userUpdate = messageUpdates.find(
+//     ({ message }) => message.text === `/start ${uniqueString}`
+//   );
 
-  return userUpdate.message.from.id;
-};
+//   return userUpdate.message.from.id;
+// };
 
 type Link = {
   id: number,
