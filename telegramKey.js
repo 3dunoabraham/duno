@@ -1,3 +1,3 @@
 module.exports = {
-	chatid: "5241349342:AAHfQVbUeGCLXjhMb7t8VnAvZwrngj0HEgc",
+	chatid: "5389030729:AAF9fnNmzr2wf-B0PMgax0yDowu0DUILZYQ",
 }
