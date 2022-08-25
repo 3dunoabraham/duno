@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
 
 
-const TELEGRAM_WRAPPER = require('./telegram.js');
+// const TELEGRAM_WRAPPER = require('./telegram.js');
 // let telegramWraper = new TELEGRAM_WRAPPER({ddcabotParent: dcaBot})
 
 async function test() {
@@ -39,7 +39,7 @@ type Link = {
 }
 
 function Gallery({ links }: { links: Link[]}) {
-  new TELEGRAM_WRAPPER({})
+  // new TELEGRAM_WRAPPER({})
 
 
   return (
