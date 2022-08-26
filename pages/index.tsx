@@ -1,21 +1,22 @@
-import { useState } from 'react'
-import { createClient } from '@supabase/supabase-js'
-
+import { useState } from "react";
+import { createClient } from "@supabase/supabase-js";
+import Link from "next/link";
 
 // const TELEGRAM_WRAPPER = require('./telegram.js');
 // let telegramWraper = new TELEGRAM_WRAPPER({ddcabotParent: dcaBot})
 
 async function test() {
-  console.log("test")
-  let result = getBotUpdates()
+  console.log("test");
+  let result = getBotUpdates();
 }
 
 const getBotUpdates = () =>
   fetch(
     "https://api.telegram.org/bot5389030729:AAF9fnNmzr2wf-B0PMgax0yDowu0DUILZYQ/getUpdates"
   ).then((response) => {
-  console.log("response", response)
-  return response.json()});
+    console.log("response", response);
+    return response.json();
+  });
 
 // const getUserTelegramId = async (uniqueString) => {
 //   const { result } = await getBotUpdates();
@@ -32,21 +33,25 @@ const getBotUpdates = () =>
 // };
 
 type Link = {
-  id: number,
-  href: string,
-  src: string,
-  name: string,
-}
+  id: number;
+  href: string;
+  src: string;
+  name: string;
+};
 
-function Gallery({ links }: { links: Link[]}) {
-  // new TELEGRAM_WRAPPER({})
-
+function Gallery({ links }: { links: Link[] }) {
+  // new TELEGRAM_WRAPPER({});
 
   return (
     <div>
-      <h1 onClick={() => { test() }}>Title</h1>
+      <h1
+        onClick={() => {
+          test();
+        }}
+      >
+        Title
+      </h1>
 
-      
       {/* Images will go here */}
       <div className="flex-column">
         {links.map((link) => (
@@ -54,40 +59,40 @@ function Gallery({ links }: { links: Link[]}) {
             <CustomLink link={link} />
           </div>
         ))}
+        <Link href="/tokens">
+          <a>Tokens</a>
+        </Link>
       </div>
     </div>
-  )
+  );
 }
 
 function Image2() {
-  return (
-    <i>Text</i>
-  )
+  return <i>Text</i>;
 }
-function CustomLink({ link }: { link: Link}) {
+function CustomLink({ link }: { link: Link }) {
   return (
-    <a href={link.href}
+    <a
+      href={link.href}
       className="text-blue-400 tx-xl pa-4  block"
-      target="_blank">
-        {link.name}
+      target="_blank"
+    >
+      {link.name}
     </a>
-  )
+  );
 }
 
-export default Gallery
+export default Gallery;
 
 export const getStaticProps = async () => {
   const supabaseAdmin = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-    process.env.SUPABASE_SERVICE_ROLE_KEY || '',
-  )
+    process.env.NEXT_PUBLIC_SUPABASE_URL || "",
+    process.env.SUPABASE_SERVICE_ROLE_KEY || ""
+  );
 
-  const { data } = await supabaseAdmin
-  .from('images')
-  .select('*')
-  .order('id')
+  const { data } = await supabaseAdmin.from("images").select("*").order("id");
 
-  console.log("data",data)
+  console.log("data", data);
 
   // test()
 
@@ -95,5 +100,5 @@ export const getStaticProps = async () => {
     props: {
       links: data,
     },
-  }
-}
+  };
+};
