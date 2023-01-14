@@ -68,6 +68,13 @@
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
 }
+.bg-glass-100
+{
+    background: rgba(255,255,255,0.05);
+/*    border: 1px solid rgba(255,255,255,0.4);*/
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+}
 
 .bg-glass-3 
 {
@@ -279,6 +286,12 @@
 .light-theme .bg-secondary { background: var(--secondary-color-light-1);  }
 .light-theme .bg-tertiary { background: var(--tertiary-color-light-1);  }
 
+.hov-bord-1-w { 
+    border: 1px solid #ffffff00;
+}
+.hov-bord-1-w:hover { 
+    border: 1px solid white;
+}
 
 ul {position: relative; transform: skewY(-15deg); }
 ul li {position: relative; list-style: none; width: 200px; padding: 5px; z-index: var(--i); transition: 0.15s; }
