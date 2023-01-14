@@ -63,27 +63,28 @@ function Gallery({
     return (
     <div className="body pos-rel flex-col flex-justify-start">
 
-        <div className="bg-glass-6 w-100px pos-abs bord-r-10 tx-white py-100 z-999 w-1080px flex-center"
+        <div className="bg-glass-6 w-100px pos-abs bord-r-10 tx-white py-100 z-999 fade-in w-1080px flex-center"
             style={{
                 transform:"translateY(200px)", border:"1px solid #777",
                 boxShadow:"0 10px 50px -20px #00000077"
             }}
         >
-            <h1 className="tx-xl flex-col flex-align-start mr-100" >
+            <h1 className="tx-xl flex-col flex-align-start mr-100 " >
                 <span>Full-Stack</span>
                 <span>Multi-Platform</span>
                 <span>Software Development</span>
             </h1>
-            <button className="duno-btn py-4 px-8 bord-r-50 tx-lg"
+            <a className="duno-btn py-4 px-8 bord-r-50 tx-lg"
+                href="https://duno.vercel.app/contact"
                 style={{boxShadow:"0px 0px 25px #CF589433"}}
             >
                 Contact Us
-            </button>
+            </a>
         </div>
 
         {/* Images will go here */}
-        <div className="flex-col flex-justify-center  tx-white">
-            <div className="w-400px">
+        <div className="flex-col flex-justify-center huerotate-1  tx-white" >
+            <div className="w-400px hover-4 ">
                 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" >
                       <path  fill="#CF5894"
                           d={
@@ -102,16 +103,16 @@ function Gallery({
 
 
 
-
+            <div className="mt-200"></div>
             <h1 className="mt-200 pt-200 tx-xxxl opaci-5 tx-ls-8 flex-col" onClick={() => { test(); }}>
                 <span>DEVELOPMENT</span>
-                <span>PLAN</span>
+                <span>PLANS</span>
             </h1>
 
             <div className=" w-1080px pos-rel flex-col ">
-                <div className=" w-600px pos-abs opaci-25" style={{ filter: "blur(5px)" }}>
+                <div className=" w-700px pos-abs opaci-25 pump-20" style={{ filter: "blur(5px) brightness(180%)" }}>
                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                          <path fill="#FF0066" d="M40.8,-56.9C54.5,-54.6,68.6,-46.2,78.1,-33.3C87.7,-20.5,92.8,-3.2,89.7,12.3C86.6,27.9,75.3,41.7,61.6,48.2C47.9,54.7,31.8,54,18.4,53.9C5.1,53.8,-5.5,54.3,-13.8,50.3C-22,46.3,-27.9,37.8,-37.4,30.4C-46.8,23,-59.9,16.8,-66.7,6.2C-73.5,-4.4,-74.1,-19.3,-64.8,-25.4C-55.5,-31.6,-36.2,-29,-23.8,-31.9C-11.3,-34.7,-5.7,-43.1,3.9,-49.2C13.5,-55.3,27,-59.1,40.8,-56.9Z" transform="translate(100 100)" />
+                          <path fill="#CF5894" d="M40.8,-56.9C54.5,-54.6,68.6,-46.2,78.1,-33.3C87.7,-20.5,92.8,-3.2,89.7,12.3C86.6,27.9,75.3,41.7,61.6,48.2C47.9,54.7,31.8,54,18.4,53.9C5.1,53.8,-5.5,54.3,-13.8,50.3C-22,46.3,-27.9,37.8,-37.4,30.4C-46.8,23,-59.9,16.8,-66.7,6.2C-73.5,-4.4,-74.1,-19.3,-64.8,-25.4C-55.5,-31.6,-36.2,-29,-23.8,-31.9C-11.3,-34.7,-5.7,-43.1,3.9,-49.2C13.5,-55.3,27,-59.1,40.8,-56.9Z" transform="translate(100 100)" />
                     </svg>
                 </div>
 
@@ -142,7 +143,7 @@ function Gallery({
 
         <div className="mt-200 pt-200"></div>
 
-        <div className="flex-column mt-4 pb-200">
+        <div className="flex-column mt-4 pb-200 ">
             <div className="tx-xl tx-white tx-ls-2 opaci-chov--10 ">
                 <Link href="https://duno.vercel.app/contact" target="_blank">
                     <a>CONTACT US</a>
