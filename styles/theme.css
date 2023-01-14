@@ -54,6 +54,20 @@
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
 }
+.bg-glass-20
+{
+    background: rgba(255,255,255,0.05);
+/*    border: 1px solid rgba(255,255,255,0.4);*/
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+.bg-glass-50
+{
+    background: rgba(255,255,255,0.05);
+/*    border: 1px solid rgba(255,255,255,0.4);*/
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+}
 
 .bg-glass-3 
 {
