@@ -447,9 +447,21 @@
 
 .spin-1 { animation: spin 1s;  animation-iteration-count: infinite }
 .spin-2 { animation: spin 2s;  animation-iteration-count: infinite }
+.huerotate-1 { animation: huerotate 20s;  animation-iteration-count: infinite }
+@keyframes huerotate { 0%{ filter: hue-rotate(0); } 50% { filter: hue-rotate(0.8rad); }
+100%{ filter: hue-rotate(0); } }
 @keyframes spin { 0%{ transform: rotate(0deg); } 100% { transform: rotate(359deg); } }
+
+
+.pump-20 { animation: pump 20s;  animation-iteration-count: infinite }
+@keyframes pump { 0%{ transform: scale(1); } 50% { transform: scale(1.06); }
+100%{ transform: scale(1); } }
+
 .hover-1 { animation: hover1 1s;  animation-iteration-count: infinite }
 .hover-2 { animation: hover 2s;  animation-iteration-count: infinite }
+.hover-3 { animation: hover 3s;  animation-iteration-count: infinite }
+.hover-4 { animation: hover 4s;  animation-iteration-count: infinite }
+
 @keyframes hover1 {
 	0%{ transform: translateY(-5px); }
 	50% { transform: translateY(5px); }
@@ -473,4 +485,21 @@
 	0%{ transform: rotate(0deg); }
 	50% { transform: rotate(10deg); }
 	100% { transform: rotate(0deg); }
+}
+
+.fade-in {
+opacity: 1;
+animation-name: fadeInOpacity;
+animation-iteration-count: 1;
+animation-timing-function: ease-in;
+animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
 }
