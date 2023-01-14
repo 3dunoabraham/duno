@@ -1,10 +1,70 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
 
 // const TELEGRAM_WRAPPER = require('./telegram.js');
 // let telegramWraper = new TELEGRAM_WRAPPER({ddcabotParent: dcaBot})
+const columnsArray = [
+    "id",
+    "domain",
+    "hosting",
+    "ssl",
+    "ownership",
+    "languages",
+    "seo",
+    "pages",
+    "searchbar",
+    "socialmedia",
+    "products",
+    "posts",
+    "website",
+    "app",
+]
 
+const columnsLabels = {
+    "id": [
+        "","","","","","","",
+    ],
+    "domain": [
+        "asd","qwe","zxc","","","","",
+    ],
+    "hosting": [
+        "","","","","","","",
+    ],
+    "ssl": [
+        "","","","","","","",
+    ],
+    "ownership": [
+        "","","","","","","",
+    ],
+    "languages": [
+        "","","","","","","",
+    ],
+    "seo": [
+        "","","","","","","",
+    ],
+    "pages": [
+        "","","","","","","",
+    ],
+    "searchbar": [
+        "","","","","","","",
+    ],
+    "socialmedia": [
+        "","","","","","","",
+    ],
+    "products": [
+        "","","","","","","",
+    ],
+    "posts": [
+        "","","","","","","",
+    ],
+    "website": [
+        "","","","","","","",
+    ],
+    "app": [
+        "","","","","","","",
+    ],
+}
 async function test() {
     console.log("test");
     let result = getBotUpdates();
@@ -59,7 +119,9 @@ function Gallery({
     links, services,
 }: { links: Link[], services: Service[] }) {
 // new TELEGRAM_WRAPPER({});
-
+    useEffect(()=>{
+        console.log(services)
+    },[])
     return (
     <div className="body pos-rel flex-col flex-justify-start">
 
@@ -108,35 +170,40 @@ function Gallery({
                 <span>DEVELOPMENT</span>
                 <span>PLANS</span>
             </h1>
-
-            <div className=" w-1080px pos-rel flex-col ">
-                <div className=" w-700px pos-abs opaci-25 pump-20" style={{ filter: "blur(5px) brightness(180%)" }}>
+            <div className="w-100 ">
+                <div className=" w-700px pos-abs  opaci-25 " style={{ transform:"translate(30%,-30%)",filter: "blur(50px) brightness(180%)" }}>
                     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                           <path fill="#CF5894" d="M40.8,-56.9C54.5,-54.6,68.6,-46.2,78.1,-33.3C87.7,-20.5,92.8,-3.2,89.7,12.3C86.6,27.9,75.3,41.7,61.6,48.2C47.9,54.7,31.8,54,18.4,53.9C5.1,53.8,-5.5,54.3,-13.8,50.3C-22,46.3,-27.9,37.8,-37.4,30.4C-46.8,23,-59.9,16.8,-66.7,6.2C-73.5,-4.4,-74.1,-19.3,-64.8,-25.4C-55.5,-31.6,-36.2,-29,-23.8,-31.9C-11.3,-34.7,-5.7,-43.1,3.9,-49.2C13.5,-55.3,27,-59.1,40.8,-56.9Z" transform="translate(100 100)" />
                     </svg>
                 </div>
+            </div>
+            <div className=" w-1080px pos-rel flex-col ">
 
-                <div className="flex-wrap w-100 bg-glass-20   bord-r-10">
-                    <div className="flex-1 px-1 py-4 tx-sm opaci-chov--50 tx-start">domain:</div>
-                    <div className="flex-1 px-1 py-4 tx-sm opaci-chov--50 tx-start">hosting:</div>
-                    <div className="flex-1 px-1 py-4 tx-sm opaci-chov--50 tx-start">ssl:</div>
-                    <div className="flex-1 px-1 py-4 tx-sm opaci-chov--50 tx-start">ownership:</div>
-                    <div className="flex-1 px-1 py-4 tx-sm opaci-chov--50 tx-start">languages:</div>
-                    <div className="flex-1 px-1 py-4 tx-sm opaci-chov--50 tx-start">seo:</div>
-                    <div className="flex-1 px-1 py-4 tx-sm opaci-chov--50 tx-start">pages:</div>
-                    <div className="flex-1 px-1 py-4 tx-sm opaci-chov--50 tx-start">searchbar:</div>
-                    <div className="flex-1 px-1 py-4 tx-sm opaci-chov--50 tx-start">socialmedia:</div>
-                    <div className="flex-1 px-1 py-4 tx-sm opaci-chov--50 tx-start">products:</div>
-                    <div className="flex-1 px-1 py-4 tx-sm opaci-chov--50 tx-start">posts:</div>
-                    <div className="flex-1 px-1 py-4 tx-sm opaci-chov--50 tx-start">website:</div>
-                    <div className="flex-1 px-1 py-4 tx-sm opaci-chov--50 tx-start">app:</div>
-                </div>
-                <div className="pos-rel w-100 bg-glass-6 bord-r-10 mt-2 px-2 mt-0 py-4">
-                    {services.map((service) => (
-                        <div key={service.id} className="">
-                            <Service service={service} />
-                        </div>
-                    ))}
+                <div className="flex-row">
+                    <div className="flex-col w-150px    bord-r-10">
+                        {columnsArray.map((aColumnName,index)=>{
+                            return(
+                                <div key={index}
+                                    className="hov-bord-1-w flex-1 px-3 py-4 bg-glass-100 mt-1 bord-r-5 box-shadow-hov-5 w-150px tx-sm opaci-chov--50 tx-start">
+                                    {aColumnName}:
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <div className="pos-rel flex-row bg-glass-6 bord-r-10 ma-2 px-4 mt-0 py-4">
+                        {services.map((service) => (
+                            <div key={service.id} className="">
+                                <Service service={service} />
+                            </div>
+                        ))}
+                    </div>
+                    <div className="flex-col w-150px    bord-r-10 invisible">
+                        {columnsArray.map((aColumnName,index)=>{
+                            return(
+                                <div key={index} className="px-3 py-4  w-150px "> </div>
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
         </div>
@@ -168,56 +235,58 @@ function HrH() {
 function Service({ service }: { service: Service }) {
     const theArray = []
     return (
-        <div className="text-bold-4   bord-r-10 noverflow block flex ">
-            <div className="flex-1 mt-1 px-1 pl-2 mr-1 bg-glass-50 opaci-chov--50 py-8">
+        <div className="text-bold-4 tx-lg  bord-r-10 noverflow block flex-col mx-1">
+
+         
+            <div className="flex-1 mt-1 px-8  box-shadow-hov-5 mr-1 bg-glass-50 opaci-chov--50 pb-3 pt-4">
                 {/*<div>domain:</div>*/}
-                <div>{service.domain}</div>
+                <div>{columnsLabels.domain[service.domain]}</div>
             </div>
-            <div className="flex-1 mt-1 px-1 pl-2 mr-1 bg-glass-50 opaci-chov--50 py-8">
+            <div className="flex-1 mt-1 px-8  box-shadow-hov-5 mr-1 bg-glass-50 opaci-chov--50 pb-3 pt-4">
                 {/*<div>hosting:</div>*/}
                 <div>{service.hosting}</div>
             </div>
-            <div className="flex-1 mt-1 px-1 pl-2 mr-1 bg-glass-50 opaci-chov--50 py-8">
+            <div className="flex-1 mt-1 px-8  box-shadow-hov-5 mr-1 bg-glass-50 opaci-chov--50 pb-3 pt-4">
                 {/*<div>ssl:</div>*/}
                 <div>{service.ssl}</div>
             </div>
-            <div className="flex-1 mt-1 px-1 pl-2 mr-1 bg-glass-50 opaci-chov--50 py-8">
+            <div className="flex-1 mt-1 px-8  box-shadow-hov-5 mr-1 bg-glass-50 opaci-chov--50 pb-3 pt-4">
                 {/*<div>ownership:</div>*/}
                 <div>{service.ownership}</div>
             </div>
-            <div className="flex-1 mt-1 px-1 pl-2 mr-1 bg-glass-50 opaci-chov--50 py-8">
+            <div className="flex-1 mt-1 px-8  box-shadow-hov-5 mr-1 bg-glass-50 opaci-chov--50 pb-3 pt-4">
                 {/*<div>languages:</div>*/}
                 <div>{service.languages}</div>
             </div>
-            <div className="flex-1 mt-1 px-1 pl-2 mr-1 bg-glass-50 opaci-chov--50 py-8">
+            <div className="flex-1 mt-1 px-8  box-shadow-hov-5 mr-1 bg-glass-50 opaci-chov--50 pb-3 pt-4">
                 {/*<div>seo:</div>*/}
                 <div>{service.seo}</div>
             </div>
-            <div className="flex-1 mt-1 px-1 pl-2 mr-1 bg-glass-50 opaci-chov--50 py-8">
+            <div className="flex-1 mt-1 px-8  box-shadow-hov-5 mr-1 bg-glass-50 opaci-chov--50 pb-3 pt-4">
                 {/*<div>pages:</div>*/}
                 <div>{service.pages}</div>
             </div>
-            <div className="flex-1 mt-1 px-1 pl-2 mr-1 bg-glass-50 opaci-chov--50 py-8">
+            <div className="flex-1 mt-1 px-8  box-shadow-hov-5 mr-1 bg-glass-50 opaci-chov--50 pb-3 pt-4">
                 {/*<div>searchbar:</div>*/}
                 <div>{service.searchbar}</div>
             </div>
-            <div className="flex-1 mt-1 px-1 pl-2 mr-1 bg-glass-50 opaci-chov--50 py-8">
+            <div className="flex-1 mt-1 px-8  box-shadow-hov-5 mr-1 bg-glass-50 opaci-chov--50 pb-3 pt-4">
                 {/*<div>socialmedia:</div>*/}
                 <div>{service.socialmedia}</div>
             </div>
-            <div className="flex-1 mt-1 px-1 pl-2 mr-1 bg-glass-50 opaci-chov--50 py-8">
+            <div className="flex-1 mt-1 px-8  box-shadow-hov-5 mr-1 bg-glass-50 opaci-chov--50 pb-3 pt-4">
                 {/*<div>products:</div>*/}
                 <div>{service.products}</div>
             </div>
-            <div className="flex-1 mt-1 px-1 pl-2 mr-1 bg-glass-50 opaci-chov--50 py-8">
+            <div className="flex-1 mt-1 px-8  box-shadow-hov-5 mr-1 bg-glass-50 opaci-chov--50 pb-3 pt-4">
                 {/*<div>posts:</div>*/}
                 <div>{service.posts}</div>
             </div>
-            <div className="flex-1 mt-1 px-1 pl-2 mr-1 bg-glass-50 opaci-chov--50 py-8">
+            <div className="flex-1 mt-1 px-8  box-shadow-hov-5 mr-1 bg-glass-50 opaci-chov--50 pb-3 pt-4">
                 {/*<div>website:</div>*/}
                 <div>{service.website}</div>
             </div>
-            <div className="flex-1 mt-1 px-1 pl-2 mr-1 bg-glass-50 opaci-chov--50 py-8">
+            <div className="flex-1 mt-1 px-8  box-shadow-hov-5 mr-1 bg-glass-50 opaci-chov--50 pb-3 pt-4">
                 {/*<div>app:</div>*/}
                 <div>{service.app}</div>
             </div>
@@ -253,12 +322,9 @@ export const getStaticProps = async () => {
         process.env.SUPABASE_SERVICE_ROLE_KEY || ""
     );
     let links = (await supabaseAdmin.from("links").select("*").order("id")).data
-    let asd = await supabaseAdmin.from("services").select("*")
-    // console.log("asd")
-    // console.log(asd)
     let services = (await supabaseAdmin.from("services").select("*").order("id")).data
-    // console.table(links)
-    // console.table(services)
+    // console.log("links, services")
+    // console.log(links, services)
     return {
         props: {
             links: links,
