@@ -150,7 +150,7 @@ function AsdGallery({
 
         {/* Images will go here */}
         <div className="flex-col flex-justify-center huerotate-1  tx-white" >
-            <div className="w-400px spin-60 ">
+            <div className="w-400px spin-120 ">
                 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" >
                       <path  fill="#CF5894"
                           d={
