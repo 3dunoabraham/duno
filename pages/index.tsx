@@ -137,7 +137,7 @@ function Gallery({
                 <span>Software Development</span>
             </h1>
             <a className="duno-btn py-4 px-8 bord-r-50 tx-lg"
-                href="https://duno.vercel.app/contact"
+                href="/contact"
                 style={{boxShadow:"0px 0px 25px #CF589433"}}
             >
                 Contact Us
@@ -212,7 +212,7 @@ function Gallery({
 
         <div className="flex-column mt-4 pb-200 ">
             <div className="tx-xl tx-white tx-ls-2 opaci-chov--10 ">
-                <Link href="https://duno.vercel.app/contact" target="_blank">
+                <Link href="/contact" target="_blank">
                     <a>CONTACT US</a>
                 </Link>
             </div>
