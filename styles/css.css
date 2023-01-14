@@ -353,6 +353,12 @@
 .box-shadow-7 {box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
 .box-shadow-9 {box-shadow: 0 0 6px rgba(0, 0, 0, 0.9); }
 
+.box-shadow-hov-1:hover {box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); }
+.box-shadow-hov-2:hover {box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+.box-shadow-hov-5:hover {box-shadow: 0 0 6px rgba(0, 0, 0, 0.5); }
+.box-shadow-hov-7:hover {box-shadow: 0 0 6px rgba(0, 0, 0, 0.7); }
+.box-shadow-hov-9:hover {box-shadow: 0 0 6px rgba(0, 0, 0, 0.9); }
+
 
 
 /* ------------------------------------------ MEDIA QUERY ------------------------------------------ */
