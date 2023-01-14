@@ -453,6 +453,8 @@
 
 .spin-1 { animation: spin 1s;  animation-iteration-count: infinite }
 .spin-2 { animation: spin 2s;  animation-iteration-count: infinite }
+.spin-20 { animation: spin 20s;  animation-iteration-count: infinite }
+.spin-60 { animation: spin 60s;  animation-iteration-count: infinite }
 .huerotate-1 { animation: huerotate 20s;  animation-iteration-count: infinite }
 @keyframes huerotate { 0%{ filter: hue-rotate(0); } 50% { filter: hue-rotate(0.8rad); }
 100%{ filter: hue-rotate(0); } }
