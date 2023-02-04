@@ -7,7 +7,7 @@ export const SalesStatusBadgePlus = ({
         case 2: return (
             <div className="nowrap flex">
                 <span className="ims-badge-secondary pa-1 tx-sm ">
-                    Sold
+                    Temporal
                 </span>
                 {!date && <div  className="tx-sm pa-1 opaci-75">Jan 1 2023</div>}
                 {!!date && <div  className="tx-sm pa-1 opaci-75">{date}</div>}
@@ -16,7 +16,7 @@ export const SalesStatusBadgePlus = ({
         case 3: return (
             <div className="nowrap flex">
                 <span className="ims-badge-tertiary pa-1 tx-sm ">
-                    Rented
+                    Private
                 </span>
                 {!date && <div  className="tx-sm pa-1 opaci-75">Jan 1 2023</div>}
                 {!!date && <div  className="tx-sm pa-1 opaci-75">{date}</div>}
