@@ -76,7 +76,7 @@ export default function InventoryPage({
 
     /****** HTML ******/
     return (<>
-    <Head> <title>Portfolio | SMP</title> </Head>
+    <Head> <title>Portfolio | Abraham Duno</title> </Head>
 
     <div className="flex w-100 h-100  noverflow-y">
         {/* <div className="Q_md_x ims-bg-faded  box-shadow-2 pos-rel ">
@@ -86,7 +86,7 @@ export default function InventoryPage({
         <main className="Q_xs_md_px-3 px-100 w-100 ">
             <BreadCrumbs pages={[["/portfolio","Portfolio"]]} />
             <div className="flex">
-                <h1 className="pt-6 tx-bold-5 flex-1 "> Portfolio </h1>
+                <h1 className="pt-6 tx-bold-5 flex-1 "> Abraham Duno's Projects </h1>
                 <div className="flex-center ">
                     <a  href="/unit/add" className="ims-button-primary clickble">+ New Idea</a>
                 </div>

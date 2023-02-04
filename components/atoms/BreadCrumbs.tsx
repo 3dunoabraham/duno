@@ -8,7 +8,13 @@ export const BreadCrumbs = ( { pages, current }: BreadCrumbsProps)=>{
     <div className="flex-center flex-justify-start pt-7 mt-1 tx-smd">
         <Link  href="/">
             <a className=" opaci-hov--50 py-2 pr-1">
-                <div className="ims-tx-primary tx-bold-6 ">Abraham Duno</div>
+                {/* <div className="ims-tx-primary tx-bold-6 ">Abraham Duno</div> */}
+                <span className="tx-lgx tx-bold-5 flex ">
+                    <div style={{color:"#74AA57"}}>D</div>
+                    <div style={{color:"#F4BA07"}}>U</div>
+                    <div style={{color:"#F44A37"}}>N</div>
+                    <div style={{color:"#748AF7"}}>O</div>
+                </span>
             </a>
         </Link>
         {pages.map(([pageUrl,pageTitle], index)=>(
