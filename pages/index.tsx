@@ -24,8 +24,8 @@ export default function IndexPage()
                 <div className="ims-button-primary   ma-1">
                     <Link href="/unit/add">
                         <a  className=" pa-2 tx-" onClick={()=>{s__loadingNewPage(true)}} >
-                            <div className="tx-ls-1 tx-lgx">+ New Unit </div>
-                            <p className="mt-1 tx-">Add Unit to Inventory</p>
+                            <div className="tx-ls-1 tx-lgx">+ New Project </div>
+                            <p className="mt-1 tx-">Add Project to Inventory</p>
                         </a>
                     </Link>
                 </div>
