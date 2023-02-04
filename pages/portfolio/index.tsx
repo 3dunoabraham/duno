@@ -78,10 +78,12 @@ export default function InventoryPage({
     return (<>
     <Head> <title>Portfolio | SMP</title> </Head>
 
-    <div className="flex w-100 h-100 px-8  Q_xs_sm_px-3 noverflow-y">
-        {/* <SidebarFilterContainer onFiltersUpdate={onFiltersUpdate} filtersRefObj={filtersRefObj} /> */}
+    <div className="flex w-100 h-100  noverflow-y">
+        {/* <div className="Q_md_x ims-bg-faded  box-shadow-2 pos-rel ">
+            <SidebarFilterContainer onFiltersUpdate={onFiltersUpdate} filtersRefObj={filtersRefObj} />
+        </div> */}
 
-        <main className="Q_xs_md_px-0 px-100 w-100 ">
+        <main className="Q_xs_md_px-3 px-100 w-100 ">
             <BreadCrumbs pages={[["/portfolio","Portfolio"]]} />
             <div className="flex">
                 <h1 className="pt-6 tx-bold-5 flex-1 "> Portfolio </h1>

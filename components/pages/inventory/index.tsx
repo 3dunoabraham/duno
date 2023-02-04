@@ -11,17 +11,19 @@ import { MapOrEntries, useIsClient, useLocalStorage, useMap } from "usehooks-ts"
 export const InventoryPageComponent = ({filteredUnits}) => {
     const app = useContext(AppContext)
     const tableConfigObj = {
-        key:{title:"UID",name:"uid"},
+        key:{title:"ID",fieldName:"slug"},
         rest:{
-            slug:{title:"SLUG",fieldName:"slug"},
-            // status:{title:"Status",fieldName:"sales_status",widget:"badge"},
+            // slug:{title:"Slug",fieldName:"slug"},
+            category:{title:"Category",fieldName:"category"},
+            name:{title:"Project",fieldName:"title"},
+            status:{title:"Status",fieldName:"status",widget:"badge"},
             // location:{title:"Location",fieldName:"location"},
             // dealer:{title:"Dealer",fieldName:"dealer"},
         },
     }
     const isClient = useIsClient()
     const ITEMSPERPAGE_MAPARRAY:MapOrEntries<string, any> = (
-        ["25", "50", "100", ].map(i => ([`${i}`,{label:`${i}`,id:`${i}`},]))
+        ["5", "10", "25", ].map(i => ([`${i}`,{label:`${i}`,id:`${i}`},]))
     )
     const [LS_itemsPerPage, s__LS_itemsPerPage] = useLocalStorage('itemsPerPage', 25)
     const [itemsPerPage,s__itemsPerPage] = useState<number>(LS_itemsPerPage)

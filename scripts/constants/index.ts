@@ -10,6 +10,6 @@ export const DEFAULT_ALERT_MAPARRAY:any = [["error",""],["warn",""],["success","
 
 
 export const USERS_DB = {
-    "user":{name: "John Doe", grants:{unit:{add:true,delete:false}}},
+    "user":{name: "John Doe", grants:{unit:{add:true,delete:true}}},
     "admin":{name: "ADMIN", grants:{unit:{add:false,delete:true}}},
 }

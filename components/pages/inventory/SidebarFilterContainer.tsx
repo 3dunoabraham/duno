@@ -39,8 +39,8 @@ export const SidebarFilterContainer = ({
 
 
     /****** HTML ******/
-    return (
-    <div className="ims-bg-faded  box-shadow-2 pos-rel ">
+    return (<>
+    {/* <div className="ims-bg-faded  box-shadow-2 pos-rel "> */}
 
         <div className="">
             <Link  href="/">
@@ -60,7 +60,7 @@ export const SidebarFilterContainer = ({
                 <div className="h-100 bg-white   pl-1 box-shadow-5 opaci-bhov-50 "> </div>
             </div>
         }
-    </div>
-    )
+    {/* </div> */}
+    </>)
 }
 

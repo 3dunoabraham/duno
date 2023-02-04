@@ -1,7 +1,7 @@
 export const SalesStatusBadge = ({
     value, reference, date = "",
 })=>{
-    switch (value)
+    switch (parseInt(value))
     {
         case 1: return <span className="ims-badge-success pa-1 tx-sm ">Available</span>
         case 2: return (
