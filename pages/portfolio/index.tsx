@@ -72,17 +72,17 @@ export default function InventoryPage({
 
     /****** HTML ******/
     return (<>
-    <Head> <title>Inventory | SMP</title> </Head>
+    <Head> <title>Portfolio | SMP</title> </Head>
 
     <div className="flex w-100 h-100 noverflow-y">
         <SidebarFilterContainer onFiltersUpdate={onFiltersUpdate} filtersRefObj={filtersRefObj} />
 
         <main className="ims-body-inner w-100 mx-4">
-            <BreadCrumbs pages={[["/inventory","Inventory"]]} />
+            <BreadCrumbs pages={[["/portfolio","Portfolio"]]} />
             <div className="flex">
-                <h1 className="pt-6 tx-bold-5 flex-1 "> Inventory </h1>
+                <h1 className="pt-6 tx-bold-5 flex-1 "> Portfolio </h1>
                 <div className="flex-center ">
-                    <a  href="/unit/add" className="ims-button-primary clickble">+ New Unit</a>
+                    <a  href="/unit/add" className="ims-button-primary clickble">+ New Project</a>
                 </div>
             </div>
             <hr className="my-2"/>

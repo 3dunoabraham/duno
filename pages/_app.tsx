@@ -14,7 +14,7 @@ import { SidebarLayout } from '@/components/templates/SidebarLayout'
 const queryClient = new QueryClient()
 // ReactFunctionPageComponent
 export default function({ Component, pageProps, ...appProps  }) {    
-    const isLayoutNeeded = ['/', '/manufacturers'].includes(appProps.router.pathname);
+    const isLayoutNeeded = ['/manufacturers'].includes(appProps.router.pathname);
 	let [user, s__user] = useState({name:"John Doe"})
 	// const usersDB = {"John Doe":{name:"John Doe"},"Admin":{name:"Admin"}}
 	// const usersGrantsDB = {"John Doe":{unit:{add:true,delete:false}},"Admin":{unit:{add:false,delete:true}}}

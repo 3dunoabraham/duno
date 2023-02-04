@@ -19,11 +19,11 @@ export const SidebarLayout = ({
         <div className=" flex-col h-100">
             {/* <Link  href="/"> */}
                 <a href="/" className=" tx-lgx tx-center tx-bold-6 show-lg_x">
-                    <div className="pa-4">INVENTORY</div>
+                    <div className="pa-4">DUNO</div>
                 </a>
             {/* </Link> */}
             {/*<div className="py-4 tx-lgx tx-center tx-bold-6 show-lg_x">
-                INVENTORY
+                DUNO
             </div>*/}
             <div className="pa-1 tx-xxl opaci-10 tx-center tx-bold-6 show-xs_lg ">
                 {<BsBoxSeam />}
