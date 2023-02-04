@@ -1,3 +1,5 @@
+import { parseUTCString } from "@/scripts/helpers/type/dateHelper"
+
 export const SalesStatusBadge = ({
     value, reference, date = "",
 })=>{
@@ -9,7 +11,7 @@ export const SalesStatusBadge = ({
                 <span className="ims-badge-secondary pa-1 tx-sm flex">
                 Temporal
                     {!date && <div  className="">, Jan 1 2023</div>}
-                    {!!date && <div  className="">, {date}</div>}
+                    {!!date && <div  className="">, |{parseUTCString(new Date(date))}</div>}
                 </span>
             </div>
         )
@@ -18,7 +20,7 @@ export const SalesStatusBadge = ({
                 <span className="ims-badge-tertiary pa-1 tx-sm flex">
                     Private
                     {!date && <div  className="">, Jan 1 2023</div>}
-                    {!!date && <div  className="">, {date}</div>}
+                    {!!date && <div  className="">,| {parseUTCString(new Date(date))}</div>}
                 </span>
             </div>
         )

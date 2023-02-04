@@ -18,12 +18,12 @@ export const StandardTableRest = ({
                     {(!theWidget) &&
                         item[displayConfigObj.rest[aKey].fieldName]
                     }
-                    {(theWidget) == "badge" && displayConfigObj.rest[aKey].fieldName && 
+                    {(theWidget) == "badge" && displayConfigObj.rest[aKey].fieldName &&  <>
                         <SalesStatusBadgePlus
                             value={item[displayConfigObj.rest[aKey].fieldName]}
                             reference={[""]} date={item.date}
                         />
-                    }
+                    </>}
                 </div>
             </div>
             )

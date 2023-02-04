@@ -1,3 +1,5 @@
+import { convertTimestamp, parseUTCString } from "@/scripts/helpers/type/dateHelper"
+
 export const SalesStatusBadgePlus = ({
     value, reference, date = "",
 })=>{
@@ -10,7 +12,7 @@ export const SalesStatusBadgePlus = ({
                     Temporal
                 </span>
                 {!date && <div  className="tx-sm pa-1 opaci-75">Jan 1 2023</div>}
-                {!!date && <div  className="tx-sm pa-1 opaci-75">{date}</div>}
+                {!!date && <div  className="tx-sm pa-1 opaci-75">{convertTimestamp(parseInt(date)/1000)}</div>}
             </div>
         )
         case 3: return (
@@ -19,7 +21,7 @@ export const SalesStatusBadgePlus = ({
                     Private
                 </span>
                 {!date && <div  className="tx-sm pa-1 opaci-75">Jan 1 2023</div>}
-                {!!date && <div  className="tx-sm pa-1 opaci-75">{date}</div>}
+                {!!date && <div  className="tx-sm pa-1 opaci-75">{convertTimestamp(parseInt(date)/1000)}</div>}
             </div>
         )
         case 4: return <span className="ims-badge-error pa-1 tx-sm ">Not Available</span>
