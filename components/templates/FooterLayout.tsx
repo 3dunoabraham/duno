@@ -1,7 +1,7 @@
 // ReactFunctionComponent
 export const FooterLayout = ()=>{
 	return (
-    <footer className=" pt-8 pb-4 flex-center Q_xs_lg_flex-col ">
+    <footer className="mt-100 pt-8 pb-4 flex-center Q_xs_lg_flex-col ">
         <div className="pb-4 px-5  flex-center Q_xs_sm_flex-col">
           	<span className="ims-tx-faded">Abraham Duno |</span>
           	<a href="mailto:support@servicepad.com">
