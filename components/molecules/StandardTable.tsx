@@ -12,7 +12,7 @@ export const StandardTable = ({
     theArray, s__selectedId, selectedId, displayConfigObj,
     deleteUnit,
 })=>{
-    
+    const subdomain= "project"    
     const app = useContext(AppContext)
     const $divObj =          useRef<HTMLDivElement>()
     const [isOpen, s__isOpen] =                     useState(false);
@@ -65,7 +65,7 @@ export const StandardTable = ({
                         <div 
                             className={`  opaci-cahov--50  Q_xs_sm_flex-col flex    pos-rel `}
                         >
-                            <a href={`/project/${item[displayConfigObj.key.fieldName]}`} className="flex-justify-start w-20 py-3 opaci-cbhov--50 " >
+                            <a href={`/${subdomain}/${item.id}`} className="flex-justify-start w-20 py-3 opaci-cbhov--50 " >
                                 <div className=" " onClick={() => {s__selectedId(index)}}>
                                     <div className="px-3 flex">
                                         {selectedId == index && 
@@ -84,7 +84,7 @@ export const StandardTable = ({
                                 </div>
                             </a>
 
-                            <a href={`/project/${item[displayConfigObj.key.fieldName]}`} className="flex-1 flex-center " >
+                            <a href={`/${subdomain}/${item.id}`} className="flex-1 flex-center " >
                                 <div className="flex-1 flex-center" onClick={() => {;s__selectedId(index)}}>
                                     <StandardTableRest {...{displayConfigObj, item}}  />
                                 </div>

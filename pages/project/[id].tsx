@@ -159,6 +159,8 @@ async function fetchUnitPageData() {
 export async function getServerSideProps({ params, query }) {
     let online = query.offline == undefined
     let optMapObj = online ? await fetchUnitPageData() : DEFAULT_UNIT_OPTS
+    const { id } = query
+    console.log("ID QUERY", id)
     let {manufacturers, distributors, dealers, owners} = optMapObj
     // console.log(manufacturers, distributors, dealers)
     return {props: { online, optMapObj} }
