@@ -21,7 +21,7 @@ export const StandardTableRest = ({
                     {(theWidget) == "badge" && displayConfigObj.rest[aKey].fieldName && 
                         <SalesStatusBadgePlus
                             value={item[displayConfigObj.rest[aKey].fieldName]}
-                            reference={[""]}
+                            reference={[""]} date={item.date}
                         />
                     }
                 </div>
