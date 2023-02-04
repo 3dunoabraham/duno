@@ -36,25 +36,6 @@ export const UnitBottomForm =({
         Array.from(Array(4).keys()).map(i => ({label:`${i+1}`,id:`${i+1}`}))
     )
     const inputsMapObj = {
-        "price": {
-            _: {label: "Price"},
-            sales_price: {
-                title:"Sales Price", inputName:"retail_price", defaultValue: "",
-                widget: "string", customFormat: "price", limit:999000,
-            },
-            min_sales_price: {
-                title:"Min Sales Price", inputName:"min_retail_price", defaultValue: "",
-                widget: "string", customFormat: "price", limit:999000,
-            },
-            lease_price: {
-                title:"Lease Price", inputName:"agreement_price", defaultValue: "",
-                widget: "string", customFormat: "price", limit:999000,
-            },
-            min_lease_price: {
-                title:"Min Lease Price", inputName:"min_agreement_price", defaultValue: "",
-                widget: "string", customFormat: "price", limit:999000,
-            },
-        },
         "characteristics": {
             _: {label: "Characteristics"},
             color: {
@@ -70,32 +51,13 @@ export const UnitBottomForm =({
                 title:"Hitch Type", defaultValue: "", optName:"label", inputName:"hitch_type",
                 widget: "enum", customFormat: "", config:["isReadOnly"], customWidth:200,
             },
-            shipping_weight: {
-                title:"Shipping Weight (lbs)", defaultValue: "",
-                widget: "string", customFormat: "integer", inputName:"shipping_weight", limit: 99000
-            },
+            // sales_price: {
+            //     title:"Sales Price", inputName:"retail_price", defaultValue: "",
+            //     widget: "string", customFormat: "price", limit:999000,
+            // },
             gvwr: {
                 title:"GVWR (lbs)", defaultValue: "",
                 widget: "string", customFormat: "integer", inputName:"gvwr", limit: 99999
-            },
-        },
-        "registration_title": {
-            _: {label: "Title"},
-            title_status: {
-                title:"Title Status", defaultValue: "", widget: "enum", customFormat: "",
-                config:["isReadOnly"], optName:"label",inputName:"title_status",
-            },
-            title_number: {
-                title:"Title No.", defaultValue: "",
-                widget: "string", customFormat: "bigint", limit: 30, inputName:"title_number",
-            },
-            title_state: {
-                title:"Title State", defaultValue: "", optName:"label", inputName:"title_state",
-                widget: "enum", customFormat: "", config:["isReadOnly"], customWidth:150,
-            },
-            mso: {
-                title:"MSO", defaultValue: "",
-                widget: "string", customFormat: "", inputName:"mso",
             },
         },
         "locations": {
@@ -128,30 +90,6 @@ export const UnitBottomForm =({
                 widget: "", customFormat: "",
             },
         },
-        "gps": {
-            _: {label: "GPS"},
-            serial: {
-                title:"Serial", defaultValue: "",
-                widget: "string", customFormat: "", inputName:"serial",
-            },
-            manufacturer: {
-                title:"Manufacturer", defaultValue: "",
-                widget: "string", customFormat: "entity", inputName:"manufacturer",
-            },
-        },
-        "investors": {
-            _: {label: "Investor"},
-            current_investor: {
-                title:"Current Investor", defaultValue: "",
-                widget: "select", config: ["isReadOnly"], customFormat: "entity",
-                optName:"_name", inputName:"current_investor",
-            },
-            previous_investor: {
-                title:"Previous Investor", defaultValue: "",
-                widget: "select", config: ["isReadOnly"], customFormat: "entity",
-                optName:"_name", inputName:"previous_investor",
-            },
-        },
     }
 
 
@@ -160,7 +98,7 @@ export const UnitBottomForm =({
     return (
     <div className="flex flex-align-start Q_xs_md_flex-col" >
         <div className="flex-col flex-align-start flex-1 pt-0 pa-4 w-100">
-            <div className="w-100">
+            {/* <div className="w-100">
                 <hr className="mb-3 w-100 opaci-20" />
                 <div className={`flex-col  w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
                     <BottomSectionInputModule uid={unit.uid} updateNewData={updateNewData} 
@@ -174,7 +112,7 @@ export const UnitBottomForm =({
                         values={values["price"]}   
                     />
                 </div>
-            </div>
+            </div> */}
             <div className="w-100">
                 <hr className="mb-3 w-100 opaci-20" />
                 <div className={`flex-col  w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
@@ -200,7 +138,7 @@ export const UnitBottomForm =({
                     />
                 </div>
             </div>
-            <div className="w-100">
+            {/* <div className="w-100">
                 <hr className="mb-3 w-100  opaci-20" />
                 <div className={`flex-col  w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
                     <BottomSectionInputModule uid={unit.uid} 
@@ -224,7 +162,7 @@ export const UnitBottomForm =({
                         }}
                     />
                 </div>
-            </div>
+            </div> */}
             <div className="w-100">
                 <hr className="mb-3 w-100 opaci-20" />
                 <div className={`flex-col  w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
@@ -254,7 +192,7 @@ export const UnitBottomForm =({
                     }
                 </div>
             </div>
-            <div className="w-100">
+            {/* <div className="w-100">
                 <hr className="mb-3 w-100 opaci-20" />
                 <div className={`flex-col  w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
                     <BottomSectionInputModule uid={unit.uid} 
@@ -269,8 +207,8 @@ export const UnitBottomForm =({
                         values={values["gps"]}  
                     />
                 </div>
-            </div>
-            <div className="w-100">
+            </div> */}
+            {/* <div className="w-100">
                 <hr className="mb-3 w-100 opaci-20" />
                 <div className={`flex-col  w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
                     <BottomSectionInputModule uid={unit.uid} 
@@ -293,7 +231,7 @@ export const UnitBottomForm =({
                         }} 
                     />
                 </div>
-            </div>
+            </div> */}
             <hr className="w-100"/>
         </div >
     </div> 

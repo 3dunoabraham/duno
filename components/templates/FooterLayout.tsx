@@ -11,11 +11,20 @@ export const FooterLayout = ()=>{
 			</a>
         </div>
         <div className="pb-4 px-5 opaci-75 tx-md ims-tx-faded">
-			@dunoabraham
+			<a className="px-2 ims-tx-link opaci-chov--50"
+				href="https://localhost:3000/portfolio?cat=1">
+				art
+			</a>
+			|	
+			<a className="px-2 ims-tx-link opaci-chov--50"
+				href="https://localhost:3000/portfolio?cat=2">
+				code
+			</a>
 			|
-			@3duno
-			|
-          	@tresduno
+			<a className="px-2 ims-tx-link opaci-chov--50"
+				href="https://localhost:3000/portfolio?cat=3">
+				games
+			</a>
         </div>
     </footer>
 	)

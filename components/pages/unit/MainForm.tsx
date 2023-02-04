@@ -144,7 +144,7 @@ export const UnitMainForm = ({
                     updateNewData={updateEntityField} 
                 />}
             </div>
-            <div className={` flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`} >
+            {/* <div className={` flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`} >
                 {<MainFormInputSelect  label="Distributor"
                     sublabel="The company providing unit to Dealer"
                     display={unit.distributor} value={distributors_obj ? distributors_obj.id : 0 }
@@ -164,7 +164,7 @@ export const UnitMainForm = ({
                     boolConfig={["isReadOnly", "isErasable"]}
                     updateNewData={updateEntityField} 
                 />}
-            </div>
+            </div> */}
             <div className={` flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`} >
                 {<MainFormInputSelect  label="Unit Manager"  
                     display={unit.owner} value={owners_obj ? owners_obj.id : unit.owner } 
