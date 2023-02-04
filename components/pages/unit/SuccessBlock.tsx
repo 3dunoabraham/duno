@@ -36,16 +36,16 @@ export const UnitSuccessBlock = ({
                     >   
                         <BsClipboard/>
                         <i className='px-1'></i>
-                        {OFFICIAL_URL}{"unit/"+newUID}
+                        {OFFICIAL_URL}{"project/"+newUID}
                     </div>
                 </div>
             </>}
         </div>
 
         <div className='flex mt-8 flex-align-end flex-justify-center'>
-            <div className=' px-2 py-2 tx-lgx'>New Unit Created:    </div>
+            <div className=' px-2 py-2 tx-lgx'>New Project Created:    </div>
             <a className='ims-tx-link px-3 tx-xl underline ims-underline-link'
-                href={OFFICIAL_URL+"unit/"+newUID}
+                href={OFFICIAL_URL+"project/"+newUID}
             >
                     #{newUID}
             </a>
@@ -54,7 +54,7 @@ export const UnitSuccessBlock = ({
             <div className=' px-2 py-2 tx-mdl opaci-75 flex-center'>
                 <div className="spin-3">|</div>
                 <div className="flex ml-3">
-                    Redirecting to new unit #{newUID} (3s)...
+                    Redirecting to new project #{newUID} (3s)...
                 </div>
                 <div className='ims-tx-link px-2 py-2 clickble'
                     onClick={()=>{stopRedirection()}}

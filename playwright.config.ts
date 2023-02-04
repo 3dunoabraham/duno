@@ -2,7 +2,7 @@ import type { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
   testMatch: [
-    // "scripts/playwright/inventoryBrowse.enterUnit.ts",
+    // "scripts/playwright/portfolioBrowse.enterUnit.ts",
     // "scripts/playwright/unitEdit.topSection.chro.ts",
     // "scripts/playwright/unitEdit.topSection.fire.ts",
     "scripts/playwright/imsLanding.unitAdd.ts",

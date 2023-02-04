@@ -1,7 +1,7 @@
 import { InputSelect } from "@/components/molecules/InputSelect"
 import { StandardTable } from "@/components/molecules/StandardTable"
 import { StandardTablePagination } from "@/components/molecules/StandardTablePagination"
-import { InventoryExportCSV } from "@/components/pages/inventory/ExportCsv"
+import { InventoryExportCSV } from "@/components/pages/portfolio/ExportCsv"
 import { API_UNITS } from "@/scripts/constants/api"
 import { AppContext } from "@/scripts/contexts/AppContext"
 import { fetchDelete } from "@/scripts/helpers/fetchHelper"

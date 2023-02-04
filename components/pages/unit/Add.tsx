@@ -114,7 +114,7 @@ export const UnitAddComponent = ({
             s__redirectionTimeout(setTimeout(()=>{redirectIfTrue(addedRes.uid)},3000))
         } else {
             s__loadings("")
-            app.alert("error","Network Error. Failed to save new unit")
+            app.alert("error","Network Error. Failed to save new project")
         }
     }
     const redirectIfTrue = (_newUID)=>{
@@ -145,15 +145,15 @@ export const UnitAddComponent = ({
                 <div className="flex-wrap pa-8  w-75 ims-bg-faded bord-r-8 box-shadow-2">
                     <div className="ims-button-primary  ">
                         <a  className=" px-2 py-4 tx-" href="/unit/add">
-                            <div className="tx-ls-1 tx-lgx">+ New Unit </div>
-                            <p className="mt-1 tx-">Add Unit to Inventory</p>
+                            <div className="tx-ls-1 tx-lgx">+ New Project </div>
+                            <p className="mt-1 tx-">Add Project to Inventory</p>
                         </a>
                     </div>
-                    <a  className="ims-cardlink box-shadow-3" href="/inventory">
-                        <h2 className="">Inventory &uarr;</h2><p className="">Unit List</p>
+                    <a  className="ims-cardlink box-shadow-3" href="/portfolio">
+                        <h2 className="">Inventory &uarr;</h2><p className="">Project List</p>
                     </a>
-                    <a  className="ims-cardlink box-shadow-3" href="/inventory?stts=1">
-                        <h2 className="">Store &rarr;</h2><p className="">Available Units</p>
+                    <a  className="ims-cardlink box-shadow-3" href="/portfolio?stts=1">
+                        <h2 className="">Store &rarr;</h2><p className="">Available Projects</p>
                     </a>
                 </div>
             </div>
@@ -163,14 +163,14 @@ export const UnitAddComponent = ({
         <div className="flex-between Q_xs_md_flex-col">
             <div className="flex-col pt-3  ">
                 <h1 className="tx-bold-5 ims-tx-dark flex ">
-                    New Unit
+                    New Project
                 </h1>
             </div>
             
             {loadings != "" &&
                 <div className='tx-lgx mt-200 flex flex-align-end flex-justify-center   flex-1'>
                     <div className='ims-badge-faded mx-2 px-2 py-2 '>Loading</div>
-                    <div className=' px-2 py-2 '>Creating New Unit...</div>
+                    <div className=' px-2 py-2 '>Creating New Project...</div>
                 </div>
             }
 

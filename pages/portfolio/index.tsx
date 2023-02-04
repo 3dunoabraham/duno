@@ -5,17 +5,17 @@ import { BsBoxSeam, BsStack, BsBox, BsCircle, BsChevronDown, BsChevronUp } from 
 
 
 // import { isDevEnvironment } from '@/scripts/helpers/devHelper';
-import { SidebarFilterContainer } from '@/components/pages/inventory/SidebarFilterContainer'
+import { SidebarFilterContainer } from '@/components/pages/portfolio/SidebarFilterContainer'
 import { API_UNITS, API_PEOPLE_BASE, API_ORGS, API_UNIT_OPTS_BASE } from '@/scripts/constants/api';
 import { fetchAndParseOrgTypes, fetchJsonArray, parsedFetchedUnit } from '@/scripts/helpers/fetchHelper';
 import { BreadCrumbs } from '@/components/atoms/BreadCrumbs'
 import { SidebarFilterToolbar } from '@/components/organisms/SidebarFilterToolbar'
-import { LoadingInventory } from '@/components/pages/inventory/LoadingInventory';
+import { LoadingInventory } from '@/components/pages/portfolio/LoadingInventory';
 import { AppContext } from '@/scripts/contexts/AppContext';
 import { sortIDDesc } from '@/scripts/helpers/type/arrayHelper';
 import { obj2MapArray } from '@/scripts/helpers/type/objectHelper';
 import { DEFAULT_UNITS_ARRAY } from '@/scripts/constants/unit';
-import { InventoryPageComponent } from '@/components/pages/inventory';
+import { InventoryPageComponent } from '@/components/pages/portfolio';
 // ReactFunctionPageComponent
 export default function InventoryPage({
     unitsArray, optsArrayObj, filtersObj, filtersRefObj, online,

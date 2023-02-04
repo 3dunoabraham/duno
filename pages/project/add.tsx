@@ -21,11 +21,11 @@ export default function UnitAddPage({}) {
 
     /****** HTML ******/
     return (<>
-    <Head> <title>{`New Unit | IMS`}</title> </Head>
+    <Head> <title>{`New Project | Abraham Duno`}</title> </Head>
 
-    <div className={``}>
+    <div className={`px-100 Q_xs_px-3 `}>
         <main className="">
-            <BreadCrumbs pages={[["/inventory","Inventory"]]} current={`Add Unit`} />
+            <BreadCrumbs pages={[["/portfolio","Portfolio"]]} current={`Add Project`} />
             <div className="Q_xs_sm my-2 invisible block">.</div>
             
             {!q__orgsObj &&

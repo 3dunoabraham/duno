@@ -10,7 +10,7 @@ export default function IndexPage()
     const [amIDev,s__amIDev] = useState()
     const [loadingNewPage, s__loadingNewPage] = useState(false)
     const apiDocsUrl = (
-        "https://servicepadportal.atlassian.net/wiki/spaces/SP/pages/459538444/Inventory+API+V1"
+        "https://duno.vercel.app"
     ) 
     return ( 
     <div className=" flex-center h-100" >
@@ -38,7 +38,7 @@ export default function IndexPage()
             </div>
             {!loadingNewPage && <div className="flex-col-r mt-8 ">
                 <div className="tx-gray px-4 ims-border-faded  opaci-chov--50 pa-2  bord-r-8 ma-2">
-                    <Link href="/unit/add">
+                    <Link href="/project/add">
                         <a  className=" pa-2  tx-" onClick={()=>{s__loadingNewPage(true)}} >
                             <div className="tx-ls-1 tx-lgx">+ New Project </div>
                             <p className="mt-1 tx-">Request New Project Idea</p>

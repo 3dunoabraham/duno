@@ -97,7 +97,7 @@ export default function UnitPage({
         return (
         <div className={``}>
             <main className="">
-                <BreadCrumbs pages={[["/inventory","Inventory"]]} current={`Detail`} />
+                <BreadCrumbs pages={[["/portfolio","Portfolio"]]} current={`Detail`} />
                 
                 <div className='py-6'>
                     <PagePlaceholder />
@@ -113,7 +113,7 @@ export default function UnitPage({
 
     <div className={``}>
         <main className="">
-            <BreadCrumbs pages={[["/inventory","Inventory"]]} current={`Detail`} />
+            <BreadCrumbs pages={[["/portfolio","Portfolio"]]} current={`Detail`} />
 
             <div className="Q_xs_md my-2 invisible block">.</div>
             {!q_unit.data && ErrorBlock({err:q_unit.error}) }
