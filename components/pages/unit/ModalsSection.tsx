@@ -38,7 +38,7 @@ export const UnitModalsSection = ({
     <div className="flex-wrap">
         {!editMode && <>
             <button onClick={()=>{s__logsModal(!logsModal)}} className="pa-1 tx-smd tx-bold-6">
-                <div className=" ims-tx-faded  opaci-hov-75 pa-1 flex-center flex-row mq_xs_flex-col">
+                <div className=" ims-tx-faded  opaci-hov-75 pa-1 flex-center flex-row Q_xs_flex-col">
                     <BsCollection className="ml-2 tx-mdl " />
                     <div className="px-1">
                         <span>History</span>
@@ -47,7 +47,7 @@ export const UnitModalsSection = ({
                 </div>
             </button>
             <button onClick={()=>{s__standardModal(!standardModal)}} className="pa-1 tx-smd tx-bold-6">
-                <div className=" ims-tx-faded  opaci-hov-75 pa-1 flex-center flex-row mq_xs_flex-col">
+                <div className=" ims-tx-faded  opaci-hov-75 pa-1 flex-center flex-row Q_xs_flex-col">
                     <BsFileEarmark className="ml-2 tx-mdl " />
                     <div className="px-1">
                         <span>Documents</span>
@@ -58,7 +58,7 @@ export const UnitModalsSection = ({
                 </div>
             </button>
             <button onClick={()=>{s__notesModal(!notesModal)}} className="pa-1 tx-smd tx-bold-6">
-                <div className=" ims-tx-faded  opaci-hov-75 pa-1 flex-center flex-row mq_xs_flex-col">
+                <div className=" ims-tx-faded  opaci-hov-75 pa-1 flex-center flex-row Q_xs_flex-col">
                     <BsPencilSquare className="ml-2 tx-mdl " />
                     <div className="px-1">
                         <span>Notes</span>

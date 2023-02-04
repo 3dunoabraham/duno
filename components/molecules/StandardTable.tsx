@@ -23,7 +23,7 @@ export const StandardTable = ({
             <div className="opaci-50 "> ID </div>
             <div className=" opaci-50 px-1"> <BsArrowDown /> </div>
         </div>
-        <div className="flex-1 flex-center flex-justify-start tx-sm show-md_x">
+        <div className="flex-1 flex-center flex-justify-start tx-sm Q_md_x">
             {Object.keys(displayConfigObj.rest).map((aKey, index)=>{
                 return (
                 <div className="opaci-50   flex-1" key={aKey}>
@@ -45,7 +45,7 @@ export const StandardTable = ({
                 >
                     <div  className="w-100 pos-rel " key={item.uid}>
                         <div 
-                            className={`  opaci-cahov--50  mq_xs_sm_flex-col flex    pos-rel `}
+                            className={`  opaci-cahov--50  Q_xs_sm_flex-col flex    pos-rel `}
                         >
                             <a href={`/unit/${item.uid}`} className="flex-justify-start w-20 py-3 opaci-cbhov--50 " >
                                 <div className=" " onClick={() => {s__selectedId(index)}}>
@@ -60,7 +60,7 @@ export const StandardTable = ({
                                         {item.uid == "5916-9759" ? "*" : ""}
                                         #{item.uid}
                                     </div>
-                                    <div className="show-xs_md px-2 opaci-75 flex-1 py-2">
+                                    <div className="Q_xs_md px-2 opaci-75 flex-1 py-2">
                                         
                                     </div>
                                 </div>

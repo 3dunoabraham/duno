@@ -3,14 +3,14 @@ export const SidebarFilterButton = ({
 })=>{
     return (
     <div className="flex w-100">
-        <div className="flex w-100 show-xs_lg  pos-rel "
+        <div className="flex w-100 Q_xs_lg  pos-rel "
             onClick={()=>{handleClick(theOption.id, theOption[filter.optField],filter.optName) }}
         >
             <div className="tx-mdl nowrap   ims-bg-primary w-min-200px ">
                 <div className="flex-1  pl-4 py-2 opaci-hov--50">{theOption[filter.optField]}</div>
             </div>
         </div>
-        <div className="flex w-100 show-lg_x pa-3  "
+        <div className="flex w-100 Q_lg_x pa-3  "
             onClick={()=>{handleClick(theOption.id, theOption[filter.optField],filter.optName) }}
         >
             <div className="w-min-50px tx-lgx"></div>

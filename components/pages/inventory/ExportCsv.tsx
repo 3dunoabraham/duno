@@ -5,11 +5,11 @@ import { CSVLink } from "react-csv";
 // ReactFunctionComponent
 export const InventoryExportCSV =({ unitsArray }) =>{
     const csvData = useMemo(()=>{
-        let theCSV = [["ID","VIN","Status","Location","Dealer"]]
+        let theCSV = [["ID","SLUG","Status","Location","Dealer"]]
         theCSV = [
             ...theCSV,
             ...unitsArray.map((aUnit,index)=>{
-                return [aUnit.id,aUnit.vin,aUnit.inventory_statuses,aUnit.location,aUnit.dealer,]
+                return [aUnit.id,aUnit.slug,aUnit.inventory_statuses,aUnit.location,aUnit.dealer,]
             })
         ]
         return theCSV

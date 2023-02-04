@@ -31,7 +31,7 @@ export const UserModule = ({amIDev, s__amIDev, isVisible})=> {
     if (!isVisible) return <></>
     if (!app.user) return <></>
     return (<>
-        <div className='show-lg_x  py-1 flex-1'>
+        <div className='Q_lg_x  py-1 flex-1'>
             {app.user.name}
         </div>
         <div className=' ims-bg-primary bord-r-8   opaci-chov--50  tx-lgx pt-2 px-2' onClick={()=>{toggleUser()}}>

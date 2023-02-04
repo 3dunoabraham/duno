@@ -3,8 +3,8 @@
   --tertiary: #ED7C3A;
 
   --primary-sat: #027A48;
-  --primary: #217142;
-  --primary-desat: #B5CFC9;
+  --primary: #F86137;
+  --primary-desat: #F7bfb8;
   --primary-light: #ECFDF3;
   
   --bg-faded: #F5F7F6;
@@ -19,16 +19,6 @@
   --border-faded: #D0D5DD;
 }
 
-body {font-family: "Inter";}
-.ims-body {width: 100%;font-family: "Inter";}
-.ims-body-inner {display: block;padding: 0 1rem;}
-.ims-body-home {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
 
 .ims-bg-lightest {background: var(--bg-lightest); }
@@ -114,9 +104,3 @@ body {font-family: "Inter";}
     border-color: #0070f3;
 }
 
-
-@media only screen and (min-width: 1200px)
-{
-    .ims-body {padding: 0 2rem;}
-    .ims-body-wide {padding: 0 5rem;}
-}

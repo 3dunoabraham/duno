@@ -89,7 +89,7 @@ export const UnitMainForm = ({
 
     /****** HTML ******/
     return (
-    <div className="flex flex-align-start  mq_xs_md_flex-col"> 
+    <div className="flex flex-align-start  Q_xs_md_flex-col"> 
         <div className={`flex-col flex-align-start  pt-0 pa-4 flex-1 ${CSS["unit-mainform_inputs"]} `}>
             <div className={`    flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
                 {<MainFormInputSelect  label="Retailer" sublabel="Name visible on unit"

@@ -24,9 +24,13 @@ export default function InventoryPage({
     const app = useContext(AppContext)
     const [zzz, s__zzz] = useState<boolean>(true);
     const [q__unitsArray, sq__unitsArray] = useState([]);
+    // useEffect(()=>{
+    //     if (!online) {sq__unitsArray(DEFAULT_UNITS_ARRAY);s__zzz(false); return}
+    //     fetchJsonArray(API_UNITS, "Units").then((res:any)=>{sq__unitsArray(res);s__zzz(false)})
+    // },[])
     useEffect(()=>{
         if (!online) {sq__unitsArray(DEFAULT_UNITS_ARRAY);s__zzz(false); return}
-        fetchJsonArray(API_UNITS, "Units").then((res:any)=>{sq__unitsArray(res);s__zzz(false)})
+        fetchJsonArray("https://duno.vercel.app/projects.json").then((res:any)=>{sq__unitsArray(res);s__zzz(false)})
     },[])
 
 
@@ -74,15 +78,15 @@ export default function InventoryPage({
     return (<>
     <Head> <title>Portfolio | SMP</title> </Head>
 
-    <div className="flex w-100 h-100 noverflow-y">
-        <SidebarFilterContainer onFiltersUpdate={onFiltersUpdate} filtersRefObj={filtersRefObj} />
+    <div className="flex w-100 h-100 px-8  Q_xs_sm_px-3 noverflow-y">
+        {/* <SidebarFilterContainer onFiltersUpdate={onFiltersUpdate} filtersRefObj={filtersRefObj} /> */}
 
-        <main className="ims-body-inner w-100 mx-4">
+        <main className="Q_xs_md_px-0 px-100 w-100 ">
             <BreadCrumbs pages={[["/portfolio","Portfolio"]]} />
             <div className="flex">
                 <h1 className="pt-6 tx-bold-5 flex-1 "> Portfolio </h1>
                 <div className="flex-center ">
-                    <a  href="/unit/add" className="ims-button-primary clickble">+ New Project</a>
+                    <a  href="/unit/add" className="ims-button-primary clickble">+ New Idea</a>
                 </div>
             </div>
             <hr className="my-2"/>

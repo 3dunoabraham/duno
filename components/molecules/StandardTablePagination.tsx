@@ -23,7 +23,7 @@ export const StandardTablePagination = ({
         >
             Previous
         </button>
-        <div className={`flex-1 flex-center opaci-75 py-3 px-4 mq_xs_sm_flex-col flex-row`}>
+        <div className={`flex-1 flex-center opaci-75 py-3 px-4 Q_xs_sm_flex-col flex-row`}>
             <div className="px-1">Page</div>
             <div className="px-1">{currentPage+1} of {lastPage+1}</div>
         </div>

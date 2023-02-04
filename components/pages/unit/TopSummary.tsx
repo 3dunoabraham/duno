@@ -13,7 +13,7 @@ export const UnitTopSummary =({ unit }) =>{
             {/*Available*/}
         </div>
         <div className="flex"><div className="tx-bold-6 pr-1">Unit ID:</div>{unit.uid}</div>
-        <div className="flex"><div className="tx-bold-6 pr-1">VIN:</div>{unit.vin || "---"}</div>
+        <div className="flex"><div className="tx-bold-6 pr-1">SLUG:</div>{unit.slug || "---"}</div>
         <div className="flex"><div className="tx-bold-6 pr-1">Year:</div>{unit.year || "---"}</div>
         <div className="flex">
             <span className="tx-bold-8">Work Order:</span>

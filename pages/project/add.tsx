@@ -23,10 +23,10 @@ export default function UnitAddPage({}) {
     return (<>
     <Head> <title>{`New Unit | IMS`}</title> </Head>
 
-    <div className={`ims-body-wide`}>
-        <main className="ims-body-inner">
+    <div className={``}>
+        <main className="">
             <BreadCrumbs pages={[["/inventory","Inventory"]]} current={`Add Unit`} />
-            <div className="show-xs_sm my-2 invisible block">.</div>
+            <div className="Q_xs_sm my-2 invisible block">.</div>
             
             {!q__orgsObj &&
                 <div className='pt-5'>

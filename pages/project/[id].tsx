@@ -95,8 +95,8 @@ export default function UnitPage({
     /****** HTML ******/
     if (q_unit.isLoading) {
         return (
-        <div className={`ims-body-wide`}>
-            <main className="ims-body-inner">
+        <div className={``}>
+            <main className="">
                 <BreadCrumbs pages={[["/inventory","Inventory"]]} current={`Detail`} />
                 
                 <div className='py-6'>
@@ -111,11 +111,11 @@ export default function UnitPage({
     return (<>
     <Head> <title>{`${id} | IMS`}</title> </Head>
 
-    <div className={`ims-body-wide`}>
-        <main className="ims-body-inner">
+    <div className={``}>
+        <main className="">
             <BreadCrumbs pages={[["/inventory","Inventory"]]} current={`Detail`} />
 
-            <div className="show-xs_md my-2 invisible block">.</div>
+            <div className="Q_xs_md my-2 invisible block">.</div>
             {!q_unit.data && ErrorBlock({err:q_unit.error}) }
             {q_unit.data &&
                 <UnitPageComponent refetch={refetchHandler} 

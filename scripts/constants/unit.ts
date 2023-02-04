@@ -26,7 +26,7 @@ export type IUnit = {
     type: string;
     sales_status: string; 
     sales_date: string; 
-    vin: string;
+    slug: string;
     year: string;
     workorder: string;
     model_style: string;
@@ -55,7 +55,7 @@ export type IUnit = {
 
 export const DEFAULT_UNIT = {
     "uid":"0000-0000","type":"","sales_status":"1","sales_date":"",
-    "vin":"","year":"","workorder":"","model_style":"",
+    "slug":"","year":"","workorder":"","model_style":"",
     "brand":"", "dealer":"","distributor":"", "manufacturer":"","owner":"", 
     "size":{width:{feet:"",inches:""},height:{feet:"",inches:""},length:{feet:"",inches:""}}, 
     "condition":"0", "inventory_status":"0","docs": "[]","images": "[]",
@@ -71,7 +71,7 @@ export const DEFAULT_UNIT = {
 
 export const EMPTY_UNIT_RES = {
     uid:"0000-0000",type:"1",sales_status:"1",sales_date:"",
-    year:"",vin:"",workorder: null,model_style:"",
+    year:"",slug:"",workorder: null,model_style:"",
     brand:"None", dealer:"None",distributor:"None", manufacturer:"None",owner:"None", 
     size: null, condition:"0", inventory_status:"0",docs: "[]",images: "[]",
     price: null,characteristics: null,registration_title: null,gps: null,
@@ -80,11 +80,11 @@ export const EMPTY_UNIT_RES = {
 }
 
 export const DEFAULT_UNITS_ARRAY = [
-    {...EMPTY_UNIT_RES,...{sales_status:1,vin:"123456789"}},
-    {...EMPTY_UNIT_RES,...{sales_status:2,vin:"000000000"}},
-    {...EMPTY_UNIT_RES,...{sales_status:1,vin:"000000000"}},
-    {...EMPTY_UNIT_RES,...{sales_status:1,vin:"000033333"}},
-    {...EMPTY_UNIT_RES,...{sales_status:4,vin:"000000000"}},
+    {...EMPTY_UNIT_RES,...{sales_status:1,slug:"123456789"}},
+    {...EMPTY_UNIT_RES,...{sales_status:2,slug:"000000000"}},
+    {...EMPTY_UNIT_RES,...{sales_status:1,slug:"000000000"}},
+    {...EMPTY_UNIT_RES,...{sales_status:1,slug:"000033333"}},
+    {...EMPTY_UNIT_RES,...{sales_status:4,slug:"000000000"}},
 ]
 
 export const DEFAULT_MODEL_STYLE_OBJARRAY = [
@@ -116,7 +116,7 @@ export const DEFAULT_DOC_CATEGORIES = ["Registration", "Title", "MSO", "Insuranc
 
 // export const FAKE_UNIT = {
 //     "uid":"8889-8818",
-//     "vin":"123ABCV63261356",
+//     "slug":"123ABCV63261356",
 //     "year":"",
 //     "brand":"Stor-Mor",
 //     "dealer":"Barbies Trailers",

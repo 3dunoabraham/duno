@@ -118,7 +118,7 @@ export const BottomSectionInputModule = ({
 
     /****** HTML ******/
     return (editMode && <>
-    <div className="flex w-100  mq_xs_md_flex-col">
+    <div className="flex w-100  Q_xs_md_flex-col">
         <div className="flex flex-1 w-max-400px pt-0 ">
             <div className="flex-1 flex-col flex-align-start w-20 tx-bold-5 tx-smd ims-tx-lightdark pr-4">
                 <div className={`tx-mdl`}>{label}</div>

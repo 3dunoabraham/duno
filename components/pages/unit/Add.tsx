@@ -160,7 +160,7 @@ export const UnitAddComponent = ({
         </div>
     }
     {!(newUID != "") &&<>
-        <div className="flex-between mq_xs_md_flex-col">
+        <div className="flex-between Q_xs_md_flex-col">
             <div className="flex-col pt-3  ">
                 <h1 className="tx-bold-5 ims-tx-dark flex ">
                     New Unit
@@ -174,7 +174,7 @@ export const UnitAddComponent = ({
                 </div>
             }
 
-            <div className="flex mq_xs_md_flex-col">
+            <div className="flex Q_xs_md_flex-col">
                 <UnitModalsSection unit={{uid:unit.uid,docs:unit.docs}} editMode={true}
                     fileArrayMap={fileArrayMap} notesArray={notesArray} logsArray={logsArray}
                     refetch={refetch}

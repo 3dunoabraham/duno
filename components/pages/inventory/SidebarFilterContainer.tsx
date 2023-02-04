@@ -40,13 +40,13 @@ export const SidebarFilterContainer = ({
 
     /****** HTML ******/
     return (
-    <div className="ims-bg-primary tx-white box-shadow-4 pos-rel ">
+    <div className="ims-bg-faded  box-shadow-2 pos-rel ">
 
         <div className="">
             <Link  href="/">
-                <a className=" tx-lgx tx-center tx-bold-6 show-lg_x"><div className="pa-4">DUNO</div></a>
+                <a className=" tx-lgx tx-center tx-bold-6 Q_lg_x"><div className="pa-4">DUNO</div></a>
             </Link>
-            <div className="py-1 tx-xxl opaci-10 tx-center tx-bold-6 show-xs_lg ">{<BsBoxSeam />}</div>
+            <div className="py-1 tx-xxl opaci-10 tx-center tx-bold-6 Q_xs_lg ">{<BsBoxSeam />}</div>
             {filtersRefObj && Object.keys(filtersRefObj).map((k,index)=>(
                 <div className="" key={index}>
                     <SidebarFilterSection handleClick={handleClick} 

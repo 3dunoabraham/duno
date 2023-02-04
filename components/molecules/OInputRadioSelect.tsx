@@ -52,7 +52,7 @@ export const OInputRadioSelect = ({
 
 return (<>
     <div className={`flex-3 pr-8 flex-col flex-align-start flex-justify-start w-100 `}>
-        <div className="flex-center mq_xs_sm_flex-col">
+        <div className="flex-center Q_xs_sm_flex-col">
             <div className="flex">
                 {Object.keys(theInputObj.inputsObj).map((aRadioSelect, index)=>{
                     return (

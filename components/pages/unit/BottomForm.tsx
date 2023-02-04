@@ -158,7 +158,7 @@ export const UnitBottomForm =({
 
     /****** HTML ******/
     return (
-    <div className="flex flex-align-start mq_xs_md_flex-col" >
+    <div className="flex flex-align-start Q_xs_md_flex-col" >
         <div className="flex-col flex-align-start flex-1 pt-0 pa-4 w-100">
             <div className="w-100">
                 <hr className="mb-3 w-100 opaci-20" />

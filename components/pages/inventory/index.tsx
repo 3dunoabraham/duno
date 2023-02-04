@@ -13,10 +13,10 @@ export const InventoryPageComponent = ({filteredUnits}) => {
     const tableConfigObj = {
         key:{title:"UID",name:"uid"},
         rest:{
-            vin:{title:"VIN",fieldName:"vin"},
-            status:{title:"Status",fieldName:"sales_status",widget:"badge"},
-            location:{title:"Location",fieldName:"location"},
-            dealer:{title:"Dealer",fieldName:"dealer"},
+            slug:{title:"SLUG",fieldName:"slug"},
+            // status:{title:"Status",fieldName:"sales_status",widget:"badge"},
+            // location:{title:"Location",fieldName:"location"},
+            // dealer:{title:"Dealer",fieldName:"dealer"},
         },
     }
     const isClient = useIsClient()

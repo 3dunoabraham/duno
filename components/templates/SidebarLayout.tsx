@@ -18,21 +18,21 @@ export const SidebarLayout = ({
 
         <div className=" flex-col h-100">
             {/* <Link  href="/"> */}
-                <a href="/" className=" tx-lgx tx-center tx-bold-6 show-lg_x">
+                <a href="/" className=" tx-lgx tx-center tx-bold-6 Q_lg_x">
                     <div className="pa-4">DUNO</div>
                 </a>
             {/* </Link> */}
-            {/*<div className="py-4 tx-lgx tx-center tx-bold-6 show-lg_x">
+            {/*<div className="py-4 tx-lgx tx-center tx-bold-6 Q_lg_x">
                 DUNO
             </div>*/}
-            <div className="pa-1 tx-xxl opaci-10 tx-center tx-bold-6 show-xs_lg ">
+            <div className="pa-1 tx-xxl opaci-10 tx-center tx-bold-6 Q_xs_lg ">
                 {<BsBoxSeam />}
             </div>
             <div className=' flex-1 flex-col w-100 '>
                 <div className=' flex-1' >
                     
                 </div>
-                <div className='w-100 flex-row mq_xs_md_flex-col bg-b-20 w-100 pa-2'>
+                <div className='w-100 flex-row Q_xs_md_flex-col bg-b-20 w-100 pa-2'>
                     
                     { 
                         <UserModule isVisible={isVisible} amIDev={amIDev} s__amIDev={s__amIDev}/>
@@ -75,18 +75,18 @@ export const SidebarExpandableItem = ({
     return (
     <>
         <div className="flex-center py-4 clickble opaci-ahov--50 px-4" onClick={()=>{s__isOpen(!isOpen)}}>
-            <div className=" pr-3  show-lg_x">
+            <div className=" pr-3  Q_lg_x">
             </div>
             <div className="px-1 tx-center tx-lg opaci-hov--50">
                 {theIcon}
             </div>
-            <div className="flex-1 pl-3 show-lg_x w-min-200px">
+            <div className="flex-1 pl-3 Q_lg_x w-min-200px">
                 {itemGroupObj.title}
             </div>
-            {isOpen && <div className="flex-1 pl-3 show-xs_lg w-min-100px">
+            {isOpen && <div className="flex-1 pl-3 Q_xs_lg w-min-100px">
                 {itemGroupObj.title}
             </div>}
-            <div className=" tx-center opaci-bhov--50  tx-mdl show-lg_x" >
+            <div className=" tx-center opaci-bhov--50  tx-mdl Q_lg_x" >
                 {!isOpen ? BsChevronDown({}) : BsChevronUp({})}
             </div>
         </div>
@@ -110,7 +110,7 @@ export const SidebarLinkItem = ({
     const isFirstItem = index == length - 1
     return (
     <div className="flex w-100">
-        <div className="flex w-100 show-xs_lg  pos-rel ">
+        <div className="flex w-100 Q_xs_lg  pos-rel ">
             <div className="tx-mdl nowrap   ims-bg-primary w-min-200px   "
                 style={isLastItem ? {borderRadius:"0 8px 0 0"} : isFirstItem ? {borderRadius:"0 0 8px 0"} : {}}
             >
@@ -119,7 +119,7 @@ export const SidebarLinkItem = ({
                 </div>
             </div>
         </div>
-        <div className="flex w-100 show-lg_x py-3 " >
+        <div className="flex w-100 Q_lg_x py-3 " >
             <div className="w-min-50px tx-lgx">
             </div>
             <div className="flex-1 ">

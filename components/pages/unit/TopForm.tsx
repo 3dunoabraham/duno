@@ -18,8 +18,8 @@ export const UnitTopForm =({
         </div>
         <div className="flex"><div className="tx-bold-6 pr-1">Unit ID:</div>{unit.uid}</div>
         <div className="flex-center w-300px">
-            <div className="tx-bold-6 pr-1">VIN:</div>
-            <InputText inputName={"vin"} reference={unit.vin || ""} updateNewData={updateNewData} 
+            <div className="tx-bold-6 pr-1">SLUG:</div>
+            <InputText inputName={"slug"} reference={unit.slug || ""} updateNewData={updateNewData} 
                 parseFunction={(newVal,prevVal)=>(validateStringLength(newVal,prevVal,17))}
             />
         </div>
