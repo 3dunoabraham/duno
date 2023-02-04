@@ -9,7 +9,7 @@ export const StandardTableRest = ({
             const theWidget = displayConfigObj.rest[aKey].widget
             return (
             <div key={index}
-                className="w-20  flex-center flex-1  flex-justify-start"
+                className="w-20 Q_xs_sm_w-100 flex  flex-center flex-1  flex-justify-start"
             >
                 <div className="Q_xs_md px-2 opaci-75 flex-1 py-2">
                     {displayConfigObj.rest[aKey].title}:

@@ -77,7 +77,31 @@
 .h-min-400px { min-height: 400px; }.h-min-450px { min-height: 450px; }.h-min-500px { min-height: 500px; }
 .h-min-600px { min-height: 600px; }.h-min-650px { min-height: 650px; }.h-min-700px { min-height: 700px; }
 .h-min-1080px { min-height: 1080px; }
-
+@media only screen and (max-width: 600px)
+{
+	.Q_xs_w-10 { width: 10%; }.Q_xs_w-20 { width: 20%; }.Q_xs_w-25 { width: 25%; }.Q_xs_w-30 { width: 30%; }.Q_xs_w-33 { width: 33%; }
+	.Q_xs_w-40 { width: 40%; }.Q_xs_w-50 { width: 50%; }.Q_xs_w-60 { width: 60%; }.Q_xs_w-70 { width: 70%; }.Q_xs_w-80 { width: 80%; }
+	.Q_xs_w-90 { width: 90%; }.Q_xs_w-95 { width: 95%; }.Q_xs_w-100 { width: 100%; }.Q_xs_w-100vw { width: 100vw; }
+}
+@media only screen and (max-width: 900px)
+{
+	.Q_xs_sm_w-10 { width: 10%; }.Q_xs_sm_w-20 { width: 20%; }.Q_xs_sm_w-25 { width: 25%; }.Q_xs_sm_w-30 { width: 30%; }.Q_xs_sm_w-33 { width: 33%; }
+	.Q_xs_sm_w-40 { width: 40%; }.Q_xs_sm_w-50 { width: 50%; }.Q_xs_sm_w-60 { width: 60%; }.Q_xs_sm_w-70 { width: 70%; }.Q_xs_sm_w-80 { width: 80%; }
+	.Q_xs_sm_w-90 { width: 90%; }.Q_xs_sm_w-95 { width: 95%; }.Q_xs_sm_w-100 { width: 100%; }.Q_xs_sm_w-100vw { width: 100vw; }
+}
+@media only screen and (max-width: 1200px)
+{
+	.Q_xs_md_w-10 { width: 10%; }.Q_xs_md_w-20 { width: 20%; }.Q_xs_md_w-25 { width: 25%; }.Q_xs_md_w-30 { width: 30%; }.Q_xs_md_w-33 { width: 33%; }
+	.Q_xs_md_w-40 { width: 40%; }.Q_xs_md_w-50 { width: 50%; }.Q_xs_md_w-60 { width: 60%; }.Q_xs_md_w-70 { width: 70%; }.Q_xs_md_w-80 { width: 80%; }
+	.Q_xs_md_w-90 { width: 90%; }.Q_xs_md_w-95 { width: 95%; }.Q_xs_md_w-100 { width: 100%; }.Q_xs_md_w-100vw { width: 100vw; }
+}
+@media only screen and (max-width: 1436px)
+{
+	.Q_xs_lg_w-10 { width: 10%; }.Q_xs_lg_w-20 { width: 20%; }.Q_xs_lg_w-25 { width: 25%; }.Q_xs_lg_w-30 { width: 30%; }.Q_xs_lg_w-33 { width: 33%; }
+	.Q_xs_lg_w-40 { width: 40%; }.Q_xs_lg_w-50 { width: 50%; }.Q_xs_lg_w-60 { width: 60%; }.Q_xs_lg_w-70 { width: 70%; }.Q_xs_lg_w-80 { width: 80%; }
+	.Q_xs_lg_w-90 { width: 90%; }.Q_xs_lg_w-95 { width: 95%; }.Q_xs_lg_w-100 { width: 100%; }.Q_xs_lg_w-100vw { width: 100vw; }
+	
+}
 
 
 /* ------------------------------------------ PADDING & MARGIN ------------------------------------------ */
@@ -488,6 +512,7 @@
 {
 	.Q_xs_flex-1 { flex: 1 }
 	.Q_xs_flex-center { display: flex; justify-content: center; align-items: center }
+	.Q_xs_flex-wrap { display: flex; flex-wrap: wrap; }
 	.Q_xs_flex-row { display: flex; flex-direction: row; justify-content: center; align-items: center }
 	.Q_xs_flex-col { display: flex; flex-direction: column; justify-content: center; align-items: center }
 	.Q_xs_flex-row-r { display: flex; flex-direction: row-reverse; justify-content: center; align-items: center }
@@ -497,6 +522,7 @@
 {
 	.Q_xs_sm_flex-1 { flex: 1 }
 	.Q_xs_sm_flex-center { display: flex; justify-content: center; align-items: center }
+	.Q_xs_sm_flex-wrap { display: flex; flex-wrap: wrap; }
 	.Q_xs_sm_flex-row { display: flex; flex-direction: row; justify-content: center; align-items: center }
 	.Q_xs_sm_flex-col { display: flex; flex-direction: column; justify-content: center; align-items: center }
 	.Q_xs_sm_flex-row-r { display: flex; flex-direction: row-reverse; justify-content: center; align-items: center }
@@ -506,6 +532,7 @@
 {
 	.Q_xs_md_flex-1 { flex: 1 }
 	.Q_xs_md_flex-center { display: flex; justify-content: center; align-items: center }
+	.Q_xs_md_flex-wrap { display: flex; flex-wrap: wrap; }
 	.Q_xs_md_flex-row { display: flex; flex-direction: row; justify-content: center; align-items: center }
 	.Q_xs_md_flex-col { display: flex; flex-direction: column; justify-content: center; align-items: center }
 	.Q_xs_md_flex-row-r { display: flex; flex-direction: row-reverse; justify-content: center; align-items: center }
@@ -515,6 +542,7 @@
 {
 	.Q_xs_lg_flex-1 { flex: 1 }
 	.Q_xs_lg_flex-center { display: flex; justify-content: center; align-items: center }
+	.Q_xs_lg_flex-wrap { display: flex; flex-wrap: wrap; }
 	.Q_xs_lg_flex-row { display: flex; flex-direction: row; justify-content: center; align-items: center }
 	.Q_xs_lg_flex-col { display: flex; flex-direction: column; justify-content: center; align-items: center }
 	.Q_xs_lg_flex-row-r { display: flex; flex-direction: row-reverse; justify-content: center; align-items: center }
