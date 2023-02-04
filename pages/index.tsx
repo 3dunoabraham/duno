@@ -17,7 +17,7 @@ export default function IndexPage()
         <main className="ims-body-inner ims-body-home ">
             <div className="mb-8 tx-xl tx-bold-3">
                 {!loadingNewPage ? "" : "Loading"}
-                <span className="px-3 tx-bold-5">SP-IMS</span>
+                <span className="px-3 tx-bold-5">DUNO</span>
                 {!!loadingNewPage ? ". . ." : ""}
             </div>
             {!loadingNewPage && <div className="flex-center flex-wrap mt-8 flex-align-start ">
