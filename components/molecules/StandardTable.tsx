@@ -89,7 +89,7 @@ export const StandardTable = ({
                                     <StandardTableRest {...{displayConfigObj, item}}  />
                                 </div>
                             </a>
-                            {app.user.grants.unit.delete && !item.url &&
+                            {app.user.grants.unit.delete && !(!!item.url || (!item.url && item.status == "4")) &&
                                 <div className="bg-b-hov-10 bord-r-8  flex-center px-3 pt-1 pb-3 ma-1 pos-rel invisible"
                                     
                                 >
@@ -98,7 +98,9 @@ export const StandardTable = ({
                                     </button>
                                 </div>
                             }
-                            {app.user.grants.unit.delete && !!item.url &&
+                            {app.user.grants.unit.delete &&
+                                (!!item.url || (!item.url && item.status == "4"))
+                            &&
                                 <div className="bg-b-hov-10 bord-r-8  flex-center px-3 pt-1 pb-3 ma-1 pos-rel "
                                     onClick={()=>{s__isMenu(isMenu == index ? -1 : index );}}
                                 >
@@ -122,7 +124,7 @@ export const StandardTable = ({
                                                     </button> */}
                                                     
 
-                                                    {!!item.url &&
+                                                    {(!!item.url || (!item.url && item.status == "4")) &&
                                                         <button className={`ims-button-faded  tx-gray flex-center`}
                                                             onClick={async ()=>{copyToClipboard(item.url)}}
                                                         >
@@ -130,6 +132,7 @@ export const StandardTable = ({
                                                             <span className="pl-2">Copy Url</span>
                                                         </button>
                                                     }
+                                                    
                                                     {!!item.url &&
                                                         <a href={item.url} target="_blank" className={`ims-button-faded flex-center tx-gray tx-green `}
                                                             
