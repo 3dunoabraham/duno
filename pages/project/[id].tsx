@@ -111,12 +111,12 @@ export default function UnitPage({
     return (<>
     <Head> <title>{`${id} | IMS`}</title> </Head>
 
-    <div className={``}>
+    <div className={`px-100 Q_xs_px-3`}>
         <main className="">
             <BreadCrumbs pages={[["/portfolio","Portfolio"]]} current={`Detail`} />
 
             <div className="Q_xs_md my-2 invisible block">.</div>
-            {!q_unit.data && ErrorBlock({err:q_unit.error}) }
+            {!q_unit.data && <ErrorBlock {...{err:q_unit.error}} /> }
             {q_unit.data &&
                 <UnitPageComponent refetch={refetchHandler} 
                     {...{editMode, s__editMode}}
