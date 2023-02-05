@@ -8,7 +8,7 @@ import { useQuery } from '@tanstack/react-query'
 import { FooterLayout } from '@/components/templates/FooterLayout'
 import { API_UNIT_OPTS_BASE, API_ORGS, API_DOCS, API_NOTES, 
 } from '@/scripts/constants/api';
-import { fetchAndParseOrgTypes, fetchJsonArray, fetchParsedUnit, fetchUnitStatuses, parseNoteObj
+import { fetchAndParseOrgTypes, fetchJsonArray, fetchParsedUnit, fetchUnitOptsObj, fetchUnitStatuses, parseNoteObj
 } from '@/scripts/helpers/fetchHelper';
 import { DEFAULT_UNIT, DEFAULT_UNIT_OPTS } from '@/scripts/constants/unit'
 import { UnitPageComponent } from '@/components/pages/unit'
@@ -95,7 +95,7 @@ export default function UnitPage({
     /****** HTML ******/
     if (q_unit.isLoading) {
         return (
-        <div className={``}>
+        <div className={`px-100 Q_xs_px-3`}>
             <main className="">
                 <BreadCrumbs pages={[["/portfolio","Portfolio"]]} current={`Detail`} />
                 
@@ -136,21 +136,27 @@ export default function UnitPage({
 /****** SERVER ******/
 async function fetchUnitPageData() {
     try {
-        let styles = (
-            await fetchJsonArray(API_UNIT_OPTS_BASE+"styles", "Model Styles")
-        )
-        let {statuses, sales_statuses, title_statuses, conditions} = (
-            await fetchUnitStatuses()
-        )
-        let orgsList = await fetchJsonArray(API_ORGS,"Orgs")
-        let {categories, distributors, dealers, owners } = (
-            await fetchAndParseOrgTypes(orgsList)
-        )
+        let {styles,
+            statuses, sales_statuses, title_statuses, conditions,
+            orgsList, distributors, dealers, owners,
+            categories, subcategories} = await fetchUnitOptsObj()
+        // let styles = (
+        //     await fetchJsonArray(API_UNIT_OPTS_BASE+"styles", "Model Styles")
+        // )
+
+        // let {statuses, sales_statuses, title_statuses, conditions} = (
+        //     await fetchUnitStatuses()
+        // )
+        // let orgsList = await fetchJsonArray(API_ORGS,"Orgs")
+        // let {categories, distributors, dealers, owners } = (
+        //     await fetchAndParseOrgTypes(orgsList)
+        // )
             
         return {
             styles,
             statuses, sales_statuses, title_statuses, conditions,
-            orgsList, distributors, categories, dealers, owners,
+            orgsList, distributors, dealers, owners,
+            categories, subcategories,
         }
     } catch (err) {
         return DEFAULT_UNIT_OPTS

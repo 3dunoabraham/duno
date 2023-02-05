@@ -94,10 +94,10 @@ export const DEFAULT_style_OBJARRAY = [
     {id:"2", label:"Cargo", desc:"",created_at:""},
 ]
 export const DEFAULT_HITCH_TYPE_OBJARRAY = [
-    {label:"5th Wheel",id:"1"},
-    {label:"Gooseneck",id:"2"},
-    {label:"Pintle",id:"3"},
-    {label:"Bumper",id:"4"},
+    {label:"Full-Stack",id:"1"},
+    {label:"Front-End",id:"2"},
+    {label:"Back-End",id:"3"},
+    {label:"Mixed",id:"4"},
 ]
 export const DEFAULT_COLOR_OBJARRAY = [
     {label:"Black",id:"1"},

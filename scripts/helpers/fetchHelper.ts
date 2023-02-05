@@ -5,15 +5,17 @@ import { dd } from '@/scripts/helpers/devHelper';
 import { isStrInteger, jstr2FullName } from '@/scripts/helpers/type/stringHelper';
 
 export async function fetchUnitOptsObj() {
+    console.log("fetchUnitOptsObj")
     try {
         // let styles = await fetchJsonArray(API_UNIT_OPTS_BASE+"styles", "Model Styles")
         let {owners, styles, statuses, sales_statuses, title_statuses, conditions, subcategories, categories} = (
             await fetchUnitStatuses()
         )
-        let orgsList = await fetchJsonArray(API_ORGS,"Orgs")
-        let {distributors, dealers } = (
-            await fetchAndParseOrgTypes(orgsList)
-        )
+        let orgsList, distributors, dealers = []
+        // let orgsList = await fetchJsonArray(API_ORGS,"Orgs")
+        // let {distributors, dealers } = (
+            // await fetchAndParseOrgTypes(orgsList)
+        // )
 
         return {
             styles,
@@ -22,7 +24,10 @@ export async function fetchUnitOptsObj() {
             categories, subcategories,
         }
     } catch (err) {
-        return DEFAULT_UNIT_OPTS
+        return {styles:null,
+            statuses:null, sales_statuses:null, title_statuses:null, conditions:null,
+            orgsList:null, distributors:null, dealers:null, owners:null,
+            categories:null, subcategories:null,}
     }
 }
 export const fetchDelete = async (url,body)=>{
@@ -64,6 +69,7 @@ export const fetchPut = async (url,body)=>{
     }
 }
 export const fetchPost = async (url,body)=>{
+    return false
     try {
         let fetchRes = await fetch(url, {
             headers:{"Content-Type":"application/json"},
@@ -302,8 +308,16 @@ export async function fetchUnitUIDAvailability(uid) {
     let isUIDTaken = headerCType.includes("application/json")
     return !isUIDTaken
 }
-export async function fetchParsedUnit(uid) {
-    let theRequest = await fetch(API_UNIT_BASE + uid);
+export async function fetchParsedUnit(id) {
+    console.log("tttehe request 1")
+    let _theRequest = await fetchJsonArray("https://duno.vercel.app/projects.json")
+    // let theJson =_theRequest.json()
+    console.log("tttehe request 2",_theRequest)
+    let theItem = _theRequest.filter((anItem)=>anItem.id == id)
+    console.log("tttehe request 23",theItem[0])
+    return {...{owner:"",images:"[]",docs:"[]",condition:"",style:"",category:"",subcategory:"",status:""},...theItem[0]}
+
+    let theRequest = await fetch(API_UNIT_BASE + id);
     let headerCType = theRequest.headers.get("content-type");
     if (!headerCType || (headerCType && !headerCType.includes("application/json"))) return null
     let theUnitResult = await theRequest.json()

@@ -119,8 +119,11 @@ const DEFAULT_RESPONSE:any = {
 async function fetchPageData() {
     try {
         let unitsArray = []
-        let customersArray = await fetchJsonArray(API_PEOPLE_BASE+"customers", "Data")
-        let orgsArray = await fetchJsonArray(API_ORGS, "Orgs")
+        let customersArray = []
+        // let customersArray = await fetchJsonArray(API_PEOPLE_BASE+"customers", "Data")
+        
+        let orgsArray = []
+        // let orgsArray = await fetchJsonArray(API_ORGS, "Orgs")
         let {categories, distributors, dealers, owners } = (
             await fetchAndParseOrgTypes(orgsArray)
         )

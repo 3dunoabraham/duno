@@ -51,15 +51,15 @@ export const UnitMainForm = ({
     // const [sales_statuses, sales_statuses_do, sales_statuses_obj] = (
     //     useArrayMapPlus(optMapObj.sales_statuses,"id", unit.sales_status,"id")
     // );
-    const [conditions, conditions_do, conditions_obj] = (
-        useArrayMapPlus(optMapObj.conditions,"id", unit.condition,"id")
-    );
+    // const [conditions, conditions_do, conditions_obj] = (
+    //     useArrayMapPlus(optMapObj.conditions,"id", unit.condition,"id")
+    // );
     const [statuses, statuses_do, statuses_obj] = (
         useArrayMapPlus(optMapObj.statuses,"id", unit.status,"id")
     );
-    const [distributors, distributors_do, distributors_obj] = (
-        useArrayMapPlus(optMapObj.distributors,"id", unit.distributor,"name")
-    );
+    // const [distributors, distributors_do, distributors_obj] = (
+    //     useArrayMapPlus(optMapObj.distributors,"id", unit.distributor,"name")
+    // );
     const [categories, categories_do, categories_obj] = (
         useArrayMapPlus(optMapObj.categories,"id", unit.category,"name")
     );
@@ -94,9 +94,58 @@ export const UnitMainForm = ({
     return (
     <div className="flex flex-align-start  Q_xs_md_flex-col"> 
         <div className={`flex-col flex-align-start  pt-0 pa-4 flex-1 ${CSS["unit-mainform_inputs"]} `}>
+            {/* <div className={`     flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
+                <OInputNMeasure  label={"Size"}   inputName="size"
+                    value={unit.size}
+                    inputkeyobj={DEFAULT_INPUT_KEYMAP_OBJECT.size} editMode={editMode}
+                    updateNewData={updateField} 
+                />
+            </div> */}
+            
+            {/* <div className={`flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
+                <MainFormInputSelect  label="Condition"   inputName="condition"
+                    display={conditions_obj ? conditions_obj.label : ""}
+                    value={unit.condition}
+                    optMap={conditions} 
+                    editMode={editMode}  boolConfig={[]}
+                    updateNewData={updateField}
+                /> 
+            </div> */}
+            {/* <div className={` flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`} >
+                {<MainFormInputSelect  label="State" 
+                    display={unit.state} value={states_obj ? states_obj.id : 0}
+                    optMap={states} optName={"slug"}
+                    editMode={editMode}    inputName="state"
+                    boolConfig={["isReadOnly",  "isErasable"]}
+                    updateNewData={updateEntityField} 
+                />}
+            </div> */}
+            {/* <div className={` flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`} >
+                {<MainFormInputSelect  label="Distributor"
+                    sublabel="The company providing unit to Dealer"
+                    display={unit.distributor} value={distributors_obj ? distributors_obj.id : 0 }
+                    optMap={distributors} optName={"slug"}
+                    editMode={editMode} inputName="distributor"
+                    boolConfig={["isReadOnly", "isErasable"]}
+                    updateNewData={updateEntityField}   
+                />}
+            </div>*/}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div className={` flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`} >
                 {<MainFormInputSelect  label="Category"
-                    // sublabel="Category or Medium"
                     display={unit.category}
                     value={categories_obj ? categories_obj.id : 0 }
                     optMap={categories} optName={"slug"}
@@ -123,23 +172,6 @@ export const UnitMainForm = ({
                     updateNewData={updateField}
                 /> 
             </div>
-            {/* <div className={`     flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
-                <OInputNMeasure  label={"Size"}   inputName="size"
-                    value={unit.size}
-                    inputkeyobj={DEFAULT_INPUT_KEYMAP_OBJECT.size} editMode={editMode}
-                    updateNewData={updateField} 
-                />
-            </div> */}
-            
-            {/* <div className={`flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
-                <MainFormInputSelect  label="Condition"   inputName="condition"
-                    display={conditions_obj ? conditions_obj.label : ""}
-                    value={unit.condition}
-                    optMap={conditions} 
-                    editMode={editMode}  boolConfig={[]}
-                    updateNewData={updateField}
-                /> 
-            </div> */}
             <div className={`flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
                 <MainFormInputSelect  label="Status"   inputName="status"
                     sublabel='Is it publicly available to see / use?'
@@ -150,25 +182,6 @@ export const UnitMainForm = ({
                     updateNewData={updateField}
                 /> 
             </div>
-            {/* <div className={` flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`} >
-                {<MainFormInputSelect  label="State" 
-                    display={unit.state} value={states_obj ? states_obj.id : 0}
-                    optMap={states} optName={"slug"}
-                    editMode={editMode}    inputName="state"
-                    boolConfig={["isReadOnly",  "isErasable"]}
-                    updateNewData={updateEntityField} 
-                />}
-            </div> */}
-            {/* <div className={` flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`} >
-                {<MainFormInputSelect  label="Distributor"
-                    sublabel="The company providing unit to Dealer"
-                    display={unit.distributor} value={distributors_obj ? distributors_obj.id : 0 }
-                    optMap={distributors} optName={"slug"}
-                    editMode={editMode} inputName="distributor"
-                    boolConfig={["isReadOnly", "isErasable"]}
-                    updateNewData={updateEntityField}   
-                />}
-            </div>*/}
             <div className={` flex w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`} >
                 {<MainFormInputSelect  label="Owner"  
                     sublabel='The agent that owns the final product'
@@ -179,7 +192,13 @@ export const UnitMainForm = ({
                     boolConfig={["isReadOnly","isErasable"]}
                 />}
             </div>
+
+
+            
         </div>
+
+
+
 
         <div className={`flex-col  flex-align-center ${CSS["unit-mainform_gallery"]} `}>
             {isAddPage &&  <><div className="ims-bg-faded h-400px bord-r-8 w-400px"></div></>}

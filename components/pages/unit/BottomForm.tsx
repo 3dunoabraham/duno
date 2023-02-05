@@ -15,9 +15,9 @@ export const UnitBottomForm =({
 })=>{
     /****** CREATE ******/
     useEffect(()=>{
-        fetchJsonArray(API_UNIT_OPTS_BASE+"title_states").then((res)=>{s__title_statesArray(res)})
-        fetchJsonArray(API_PEOPLE_BASE+"customers", "Data").then((res)=>{s__customersArray(res)})
-        fetchJsonArray(API_PEOPLE_BASE+"investors", "Data").then((res)=>{s__investorsArray(res)})
+        // fetchJsonArray(API_UNIT_OPTS_BASE+"title_states").then((res)=>{s__title_statesArray(res)})
+        // fetchJsonArray(API_PEOPLE_BASE+"customers", "Data").then((res)=>{s__customersArray(res)})
+        // fetchJsonArray(API_PEOPLE_BASE+"investors", "Data").then((res)=>{s__investorsArray(res)})
     },[])
 
 
@@ -26,12 +26,13 @@ export const UnitBottomForm =({
     const [investorsArray, s__investorsArray] = useState([])
     const [customersArray, s__customersArray] = useState([])
     const [title_statesArray, s__title_statesArray] = useState([])
-    const parsed_investorsArray = useMemo(()=>(
-        investorsArray.map((x)=>({...x,_name:`${x.full_name.first_name} ${x.full_name.last_name}`})
-    )),[investorsArray])
+    // const parsed_investorsArray = useMemo(()=>(
+    //     investorsArray.map((x)=>({...x,_name:`${x.full_name.first_name} ${x.full_name.last_name}`})
+    // )),[investorsArray])
     const parsed_customersArray = useMemo(()=>(
-        customersArray.map((x)=>({...x,_name:`${x.full_name.first_name} ${x.full_name.last_name}`})
-    )),[customersArray])
+        []
+        // customersArray.map((x)=>({...x,_name:`${x.full_name.first_name} ${x.full_name.last_name}`}))
+    ),[customersArray])
     const axlesObjArray = (
         Array.from(Array(4).keys()).map(i => ({label:`${i+1}`,id:`${i+1}`}))
     )
@@ -39,46 +40,46 @@ export const UnitBottomForm =({
         "characteristics": {
             _: {label: "Characteristics"},
             color: {
-                title:"Color", defaultValue: "",
+                title:"Software", defaultValue: "",
                 widget: "color", customFormat: "", limit: 24, inputName:"color",
             },
             axles: {
-                title:"Axles", defaultValue: "",
+                title:"Version", defaultValue: "",
                 widget: "select", customFormat: "intrange", inputName:"axles", limit:4, 
                 config:["isReadOnly"],  optName:"label"
             },
             hitch_type: {
-                title:"Hitch Type", defaultValue: "", optName:"label", inputName:"hitch_type",
-                widget: "enum", customFormat: "", config:["isReadOnly"], customWidth:200,
+                title:"Scope", defaultValue: "", optName:"label", inputName:"hitch_type",
+                widget: "enum", customFormat: "", config:["isReadOnly"], customWidth:250,
             },
             // sales_price: {
             //     title:"Sales Price", inputName:"retail_price", defaultValue: "",
             //     widget: "string", customFormat: "price", limit:999000,
             // },
             gvwr: {
-                title:"GVWR (lbs)", defaultValue: "",
+                title:"Users (qty)", defaultValue: "",
                 widget: "string", customFormat: "integer", inputName:"gvwr", limit: 99999
             },
         },
         "locations": {
             _: {label: "Location"},
             location: {
-                title:"Customer or Company", defaultValue: "",
+                title:"Hosting or Service", defaultValue: "",
                 widget: "select", customFormat: "radio", path: true, inputName:"location",
-                radioName:"location_related", titlesObj: {"1":"Company","2":"Customer"},
+                radioName:"location_related", titlesObj: {"1":"Hosting","2":"Service"},
                 inputsObj:{
                     company: {
-                        title:"Company", defaultValue: "", optName: "name",
+                        title:"Hosting", defaultValue: "", optName: "name",
                         widget: "select", customFormat: "entity", inputName:"company", 
                     },
                     customer: {
-                        title:"Customer", defaultValue: "", optName: "_name",
+                        title:"Service", defaultValue: "", optName: "_name",
                         widget: "select", customFormat: "entity", inputName:"customer", 
                     },
                 },
             },
             physical_as_of: {
-                title:"Physical As Of Date", defaultValue: "",
+                title:"Physical Location", defaultValue: "",
                 widget: "date", customFormat: "", inputName:"physical_as_of"
             },
             county: {
@@ -138,6 +139,42 @@ export const UnitBottomForm =({
                     />
                 </div>
             </div>
+            <div className="w-100">
+                <hr className="mb-3 w-100 opaci-20" />
+                <div className={`flex-col  w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
+                    <BottomSectionInputModule uid={unit.uid} 
+                        label={inputsMapObj["locations"]._.label}
+                        inputsMapObj={inputsMapObj["locations"]} editMode={editMode} 
+                        values={values["locations"]}   inputName={"locations"}
+                        flex={"col"}
+                          optsObj={{company:[] ,customer:[]}} 
+                        needsFullObjectAtAPI={false} 
+                        updateNewData={updateNewData} 
+                    />
+                    <BottomSectionOutputModule uid={unit.uid} 
+                        label={inputsMapObj["locations"]._.label}
+                        inputsMapObj={inputsMapObj["locations"]} editMode={editMode} 
+                        values={values["locations"]}   
+                        flex={"col"}
+                        optsObj={{company:[] ,customer:[]}} 
+                    />
+                    {false && !editMode &&
+                        <BottomSectionOutputModule uid={unit.uid} 
+                            label={inputsMapObj["locations"]._.label}
+                            inputsMapObj={inputsMapObj["locations"]} editMode={false} 
+                            values={values["locations"]}   
+                            optsObj={{company:optMapObj.orgsList,customer:parsed_customersArray}} 
+                        />
+                    }
+                </div>
+            </div>
+
+
+
+
+
+
+            
             {/* <div className="w-100">
                 <hr className="mb-3 w-100  opaci-20" />
                 <div className={`flex-col  w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
@@ -163,35 +200,6 @@ export const UnitBottomForm =({
                     />
                 </div>
             </div> */}
-            <div className="w-100">
-                <hr className="mb-3 w-100 opaci-20" />
-                <div className={`flex-col  w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
-                    <BottomSectionInputModule uid={unit.uid} 
-                        label={inputsMapObj["locations"]._.label}
-                        inputsMapObj={inputsMapObj["locations"]} editMode={editMode} 
-                        values={values["locations"]}   inputName={"locations"}
-                        flex={"col"}
-                          optsObj={{company:optMapObj.orgsList ,customer:parsed_customersArray}} 
-                        needsFullObjectAtAPI={false} 
-                        updateNewData={updateNewData} 
-                    />
-                    <BottomSectionOutputModule uid={unit.uid} 
-                        label={inputsMapObj["locations"]._.label}
-                        inputsMapObj={inputsMapObj["locations"]} editMode={editMode} 
-                        values={values["locations"]}   
-                        flex={"col"}
-                        optsObj={{company:optMapObj.orgsList ,customer:parsed_customersArray}} 
-                    />
-                    {false && !editMode &&
-                        <BottomSectionOutputModule uid={unit.uid} 
-                            label={inputsMapObj["locations"]._.label}
-                            inputsMapObj={inputsMapObj["locations"]} editMode={false} 
-                            values={values["locations"]}   
-                            optsObj={{company:optMapObj.orgsList,customer:parsed_customersArray}} 
-                        />
-                    }
-                </div>
-            </div>
             {/* <div className="w-100">
                 <hr className="mb-3 w-100 opaci-20" />
                 <div className={`flex-col  w-100   ${editMode ? 'pb-4 pr-6' : 'pb-8'}`}>
