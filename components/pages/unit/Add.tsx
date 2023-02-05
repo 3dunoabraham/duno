@@ -42,8 +42,8 @@ export const UnitAddComponent = ({
             
             if ([
                     "location_related",
-                    "model_style","brand","dealer","distributor",
-                    "manufacturer","owner","sub_manufacturer","location","previous_investor",
+                    "style","subcategory","dealer","distributor",
+                    "category","owner","sub_category","location","previous_investor",
                     "current_investor",
                 ].includes(aProperty)
                 )
@@ -144,7 +144,7 @@ export const UnitAddComponent = ({
             <div className="flex-center mt-8 pt-100 w-100">
                 <div className="flex-wrap pa-8  w-75 ims-bg-faded bord-r-8 box-shadow-2">
                     <div className="ims-button-primary  ">
-                        <a  className=" px-2 py-4 tx-" href="/unit/add">
+                        <a  className=" px-2 py-4 tx-" href="/project/add">
                             <div className="tx-ls-1 tx-lgx">+ New Project </div>
                             <p className="mt-1 tx-">Add Project to Inventory</p>
                         </a>
@@ -200,6 +200,7 @@ export const UnitAddComponent = ({
                 <UnitMainForm refetch={refetch} editMode={true}  isAddPage={true} 
                     unit={unit} optMapObj={optMapObj} updateNewData={updateNewData}
                 />
+                <hr className='my-4 invisible'/>
                 <UnitBottomForm unit={unit} optMapObj={optMapObj} values={customFormValues}
                     updateNewData={updateNewData} editMode={true} 
                 />

@@ -1,24 +1,25 @@
 import { API_ORGS, API_ORG_TYPES, API_UNIT_BASE, API_UNIT_OPTS_BASE } from '@/scripts/constants/api';
 import { rejects } from 'assert';
-import { DEFAULT_MODEL_STYLE_OBJARRAY, DEFAULT_UNIT_OPTS } from '@/scripts/constants/unit';
+import { DEFAULT_style_OBJARRAY, DEFAULT_UNIT_OPTS } from '@/scripts/constants/unit';
 import { dd } from '@/scripts/helpers/devHelper';
 import { isStrInteger, jstr2FullName } from '@/scripts/helpers/type/stringHelper';
 
 export async function fetchUnitOptsObj() {
     try {
-        let model_styles = await fetchJsonArray(API_UNIT_OPTS_BASE+"model_styles", "Model Styles")
-        let {inventory_statuses, sales_statuses, title_statuses, conditions} = (
+        // let styles = await fetchJsonArray(API_UNIT_OPTS_BASE+"styles", "Model Styles")
+        let {owners, styles, statuses, sales_statuses, title_statuses, conditions, subcategories, categories} = (
             await fetchUnitStatuses()
         )
         let orgsList = await fetchJsonArray(API_ORGS,"Orgs")
-        let {manufacturers, distributors, dealers, owners } = (
+        let {distributors, dealers } = (
             await fetchAndParseOrgTypes(orgsList)
         )
 
         return {
-            model_styles,
-            inventory_statuses, sales_statuses, title_statuses, conditions,
-            orgsList, distributors, manufacturers, dealers, owners,
+            styles,
+            statuses, sales_statuses, title_statuses, conditions,
+            orgsList, distributors, dealers, owners,
+            categories, subcategories,
         }
     } catch (err) {
         return DEFAULT_UNIT_OPTS
@@ -87,7 +88,7 @@ export async function fetchJsonArray(theUrl, propName = "") {
         if (!succesfullJsonResponse) return returnError([],{err:"json"},theUrl)
         let theJsonResult = await theRequest.json()
         // let invalidArrayObjOrArrayMsg = (
-        //     "Ops..! there is no such thing called <model_style> please refer to </api/v1/units/opts/> for the list of available options related to Units"
+        //     "Ops..! there is no such thing called <style> please refer to </api/v1/units/opts/> for the list of available options related to Units"
         // )
         // if ("message" in theJsonResult && theJsonResult.message == invalidArrayObjOrArrayMsg ) return returnError([],{},theUrl)
         let theParsedResult = propName == "" ? theJsonResult : theJsonResult[propName]
@@ -114,41 +115,77 @@ export async function fetchMultipleJsonArray(requestsObj) {
 export async function fetchAndParseOrgTypes(orgsArray) {
     let orgTypesList = await fetchJsonArray(API_ORG_TYPES)
     
-    let manufacturers = parseOrgTypeList("manufacturer", orgsArray,orgTypesList)
+    let categories = parseOrgTypeList("category", orgsArray,orgTypesList)
     let distributors = parseOrgTypeList("distributor", orgsArray,orgTypesList);
     let dealers = parseOrgTypeList("dealer", orgsArray,orgTypesList)
     let owners = parseOrgTypeList("owner", orgsArray,orgTypesList)
-    // console.log(API_ORG_TYPES, orgTypesList, {manufacturers, distributors, dealers })
-    return {manufacturers, distributors, dealers, owners }
+    // console.log(API_ORG_TYPES, orgTypesList, {categories, distributors, dealers })
+    return {categories, distributors, dealers, owners }
 }
 export const parseArray = (_obj)=>{
     return _obj && Array.isArray(_obj) ? _obj : []
 }
 export async function fetchUnitStatuses() {
+    return {
+        // "styles": [],
+        sales_statuses:[], title_statuses:[], conditions:[],
+        "statuses": [
+            {"id":"1","slug": "Available"},
+            {"id":"2","slug": "Temporal"},
+            {"id":"3","slug": "Private"},
+            {"id":"4","slug": "Not Available"}
+        ],
+        "categories": [
+            {"id":"1","slug": "3D Traditional"},
+            {"id":"2","slug": "2D Traditional"},
+            {"id":"3","slug": "3D Digital"},
+            {"id":"4","slug": "2D Digital"},
+            {"id":"5","slug": "Mixed"}
+        ],
+        "subcategories": [
+            {"id":"1","slug": "Object"},
+            {"id":"2","slug": "Picture"},
+            {"id":"3","slug": "Animation"},
+            {"id":"4","slug": "Mixed"}
+        ],
+        "owners": [
+            {"id":"1","slug": "Own"},
+            {"id":"2","slug": "Third Party"},
+            {"id":"3","slug": "None"},
+            {"id":"4","slug": "Mixed"}
+        ],
+        "styles": [
+            {"id":"1","slug": "Classic"},
+            {"id":"2","slug": "Modern"},
+            {"id":"3","slug": "Futuristic"},
+            {"id":"4","slug": "Mixed"}
+        ]
+    }
     try {
-        let model_styles = (
-            await fetchJsonArray(API_UNIT_OPTS_BASE+"model_styles", "Model Styles")
+        let styles = (
+            await fetchJsonArray(API_UNIT_OPTS_BASE+"styles", "Model Styles")
         )
         let reqObj = {
-            "inventoryStatuses": [API_UNIT_OPTS_BASE+"inventory_statuses",""],
+            // "inventoryStatuses": [API_UNIT_OPTS_BASE+"statuses",""],
             "saleStatuses": [API_UNIT_OPTS_BASE+"sales_statuses",""],
             "titleStatuses": [API_UNIT_OPTS_BASE+"title_statuses",""],
             "conditions": [API_UNIT_OPTS_BASE+"conditions",""],
         }
         let reqObjKeys = Object.keys(reqObj)
         let optsArray = await fetchMultipleJsonArray(reqObj)
-        let inventory_statuses = parseArray(optsArray[reqObjKeys.indexOf("inventoryStatuses")])
+        // let statuses = parseArray(optsArray[reqObjKeys.indexOf("inventoryStatuses")])
+        let statuses = []
         let sales_statuses = parseArray(optsArray[reqObjKeys.indexOf("saleStatuses")])
         let title_statuses = parseArray(optsArray[reqObjKeys.indexOf("titleStatuses")])
         let conditions = parseArray(optsArray[reqObjKeys.indexOf("conditions")])
 
         return {
-            inventory_statuses, sales_statuses, title_statuses, conditions,
+            statuses, sales_statuses, title_statuses, conditions,
         }
     } catch (err) {
         dd("fetchUnitStatuses", err)
         return {
-            inventory_statuses:[],
+            statuses:[],
             sales_statuses:[],
             title_statuses:[],
             conditions:[],

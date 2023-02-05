@@ -20,7 +20,7 @@ export const SidebarFilterContainer = ({
     },[pre_containerWidth]);
 
     const ICONS = {
-        manufacturers: <BsStack />,
+        categories: <BsStack />,
         hubs: <BsBox />,
         sales_status: <BsCircle />,
         dealer: <FaHandshake />,

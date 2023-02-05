@@ -9,7 +9,7 @@ export const InventoryExportCSV =({ unitsArray }) =>{
         theCSV = [
             ...theCSV,
             ...unitsArray.map((aUnit,index)=>{
-                return [aUnit.id,aUnit.slug,aUnit.inventory_statuses,aUnit.location,aUnit.dealer,]
+                return [aUnit.id,aUnit.slug,aUnit.statuses,aUnit.location,aUnit.dealer,]
             })
         ]
         return theCSV

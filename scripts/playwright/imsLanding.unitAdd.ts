@@ -9,7 +9,7 @@ const getFixedLengthRandomInt = (len) =>{
 }
 
 
-test('IMS Landing, enter add unit page, save new unit (with manufacturer)', async ({ page })=>{
+test('IMS Landing, enter add unit page, save new unit (with category)', async ({ page })=>{
   await page.goto('https://ims-f-e-duno.vercel.app');
   await page.getByRole('link', { name: '+ New Unit Add Unit to Inventory' }).click();
   await page.locator('input').first().click();
@@ -19,7 +19,7 @@ test('IMS Landing, enter add unit page, save new unit (with manufacturer)', asyn
   });
   await page.locator('div:nth-child(4) > .flex-col > .py-2').fill(`${1950+getRandomInt(99)}`);
   await page.locator('.flex > .py-2').first().click();
-  await page.getByText('Manufacturer #'+(1+getRandomInt(3))).click();
+  await page.getByText('category #'+(1+getRandomInt(3))).click();
   await page.locator('div:nth-child(2) > div:nth-child(2) > div > .pos-rel > .flex > .py-2').first().click();
   await page.getByText('Red Trailer').click();
   await page.locator('.ml-1 > .pos-rel > .flex > .py-2').first().click();
@@ -37,7 +37,7 @@ test('IMS Landing, enter add unit page, save new unit (with manufacturer)', asyn
   await page.locator('div:nth-child(7) > div:nth-child(2) > div > .pos-rel > .flex > .py-2').click();
   await page.getByText('Distributor #3').click();
   await page.locator('div:nth-child(8) > div:nth-child(2) > div > .pos-rel > .flex > .py-2').click();
-  await page.getByText('Manufacturer #3').click();
+  await page.getByText('category #3').click();
   await page.locator('div:nth-child(9) > div:nth-child(2) > div > .pos-rel > .flex > .py-2').click();
   await page.getByText('retailer #3').click();
   await page.locator('.w-max-120px > .flex-col > .py-2').first().click();

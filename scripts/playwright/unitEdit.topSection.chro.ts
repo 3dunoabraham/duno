@@ -11,7 +11,7 @@ test('Unit Edit, top section fields, @chromium', async ({ page })=>{
   await page.goto('https://ims-f-e-duno.vercel.app/unit/7391-7954');
   await page.getByText('Edit').nth(1).click();
   await page.locator('.flex > .py-2').first().click();
-  await page.getByText('manufacturer #1').click();
+  await page.getByText('category #1').click();
   await page.locator('div:nth-child(2) > div:nth-child(2) > div > .pos-rel > .flex > .py-2').first().click();
   await page.getByText('Red Trailer').click();
   await page.locator('.ml-1 > .pos-rel > .flex > .py-2').first().click();
@@ -29,7 +29,7 @@ test('Unit Edit, top section fields, @chromium', async ({ page })=>{
   await page.locator('div:nth-child(7) > div:nth-child(2) > div > .pos-rel > .flex > .py-2').click();
   await page.getByText('Distributor #1').click();
   await page.locator('div:nth-child(8) > div:nth-child(2) > div > .pos-rel > .flex > .py-2').click();
-  await page.getByText('manufacturer #1').click();
+  await page.getByText('category #1').click();
   await page.locator('div:nth-child(9) > div:nth-child(2) > div > .pos-rel > .flex > .py-2').click();
   await page.getByText('Hub1').click();
   await page.getByText('Save').nth(1).click();

@@ -9,7 +9,7 @@ import { UserModule } from '@/components/molecules/UserModule'
 export const SidebarLayout = ({
     linksObj,isVisible,
 })=>{
-    const ICONS = {manufacturers: <BsStack />,hubs: <BsBox />,status: <BsCircle />}
+    const ICONS = {categories: <BsStack />,hubs: <BsBox />,status: <BsCircle />}
     const app = useContext(AppContext)
     const [amIDev,s__amIDev] = useState()
     if (!isVisible) return <UserModule amIDev={amIDev} s__amIDev={s__amIDev} isVisible={isVisible}/>

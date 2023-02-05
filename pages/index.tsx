@@ -52,7 +52,7 @@ export default function IndexPage()
                                 <h2 className="">Portfolio &rarr;</h2><p className="">Latest Projects</p>
                             </a>
                         </Link>
-                        {false && <Link href="/manufacturers">
+                        {false && <Link href="/categories">
                             <a  className="ims-cardlink" onClick={()=>{s__loadingNewPage(true)}} >
                                 <h2 className="">Dealers &rarr;</h2><p className="">Order List</p>
                             </a>

@@ -136,21 +136,21 @@ export default function UnitPage({
 /****** SERVER ******/
 async function fetchUnitPageData() {
     try {
-        let model_styles = (
-            await fetchJsonArray(API_UNIT_OPTS_BASE+"model_styles", "Model Styles")
+        let styles = (
+            await fetchJsonArray(API_UNIT_OPTS_BASE+"styles", "Model Styles")
         )
-        let {inventory_statuses, sales_statuses, title_statuses, conditions} = (
+        let {statuses, sales_statuses, title_statuses, conditions} = (
             await fetchUnitStatuses()
         )
         let orgsList = await fetchJsonArray(API_ORGS,"Orgs")
-        let {manufacturers, distributors, dealers, owners } = (
+        let {categories, distributors, dealers, owners } = (
             await fetchAndParseOrgTypes(orgsList)
         )
             
         return {
-            model_styles,
-            inventory_statuses, sales_statuses, title_statuses, conditions,
-            orgsList, distributors, manufacturers, dealers, owners,
+            styles,
+            statuses, sales_statuses, title_statuses, conditions,
+            orgsList, distributors, categories, dealers, owners,
         }
     } catch (err) {
         return DEFAULT_UNIT_OPTS
@@ -161,7 +161,7 @@ export async function getServerSideProps({ params, query }) {
     let optMapObj = online ? await fetchUnitPageData() : DEFAULT_UNIT_OPTS
     const { id } = query
     console.log("ID QUERY", id)
-    let {manufacturers, distributors, dealers, owners} = optMapObj
-    // console.log(manufacturers, distributors, dealers)
+    let {categories, distributors, dealers, owners} = optMapObj
+    // console.log(categories, distributors, dealers)
     return {props: { online, optMapObj} }
 }

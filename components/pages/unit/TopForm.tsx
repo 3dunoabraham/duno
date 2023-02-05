@@ -13,33 +13,28 @@ export const UnitTopForm =({
     return (
     <div className="flex-wrap gap-2 ims-tx-faded  tx-md ">
         <div className="flex-center">
-            <div className="tx-bold-6 pr-1">Sales Status:</div>
-            <SalesStatusBadge value={parseInt(unit.sales_status)} reference={[""]} />
+            <div className="tx-bold-6 pr-1">Status:</div>
+            <SalesStatusBadge value={parseInt(unit.status)} reference={[""]} />
         </div>
-        <div className="flex"><div className="tx-bold-6 pr-1">Unit ID:</div>{unit.uid}</div>
-        <div className="flex-center w-300px">
+        {/* <div className="flex"><div className="tx-bold-6 pr-1">Unit ID:</div>{unit.uid}</div> */}
+        <div className="flex-center w-200px">
             <div className="tx-bold-6 pr-1">SLUG:</div>
             <InputText inputName={"slug"} reference={unit.slug || ""} updateNewData={updateNewData} 
-                parseFunction={(newVal,prevVal)=>(validateStringLength(newVal,prevVal,17))}
+                parseFunction={(newVal,prevVal)=>(validateStringLength(newVal,prevVal,12))}
             />
         </div>
-        <div className="flex-center w-150px">
-            <div className="tx-bold-6 pr-1">Year:</div>
-            <InputText inputName={"year"} reference={unit.year || ""}
-                updateNewData={updateNewData_Year}
-                parseFunction={(newVal,prevVal)=>(validateInteger(newVal,prevVal,0,2050))}
+        <div className="flex-center w-220px">
+            <div className="tx-bold-6 pr-1">Date:</div>
+            <InputText inputName={"date"} reference={unit.date || ""}
+                updateNewData={updateNewData}
+                parseFunction={(newVal,prevVal)=>(validateInteger(newVal,prevVal,0,9999999999999))}
             />
         </div>
-        <div className="flex">
-            <span className="tx-bold-8">Work Order:</span>
-            {!!unit.workorder && 
-                <a className="ims-tx-link opaci-hov--50 pl-0 pa-1 tx-bold-5 mr-3 pl-2 "
-                    href={`${unit.workorder.invoice_url}`}
-                >
-                    {unit.workorder.invoice_title}
-                </a>
-            }       
-            {!unit.workorder && <div className='px-1'> --- </div>}       
+        <div className="flex-center w-300px">
+            <div className="tx-bold-6 pr-1">URL:</div>
+            <InputText inputName={"url"} reference={unit.url || ""} updateNewData={updateNewData} 
+                parseFunction={(newVal,prevVal)=>(validateStringLength(newVal,prevVal,200))}
+            />     
         </div>
     </div>
     )

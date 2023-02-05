@@ -88,7 +88,7 @@ export default function InventoryPage({
             <div className="flex">
                 <h1 className="pt-6 tx-bold-5 flex-1 "> Abraham Duno's Projects </h1>
                 <div className="flex-center ">
-                    <a  href="/unit/add" className="ims-button-primary clickble">+ New Idea</a>
+                    <a  href="/project/add" className="ims-button-primary clickble">+ New Idea</a>
                 </div>
             </div>
             <hr className="my-2"/>
@@ -121,7 +121,7 @@ async function fetchPageData() {
         let unitsArray = []
         let customersArray = await fetchJsonArray(API_PEOPLE_BASE+"customers", "Data")
         let orgsArray = await fetchJsonArray(API_ORGS, "Orgs")
-        let {manufacturers, distributors, dealers, owners } = (
+        let {categories, distributors, dealers, owners } = (
             await fetchAndParseOrgTypes(orgsArray)
         )
             

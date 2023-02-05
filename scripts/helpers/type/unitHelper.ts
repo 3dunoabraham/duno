@@ -11,7 +11,7 @@ export const unit2Form = (unit)=> {
     let {mso, title_number, title_state, title_status} = (
         unit.registration_title || DEFAULT_UNIT.registration_title
     )
-    let {manufacturer, serial} = (
+    let {category, serial} = (
         unit.gps || DEFAULT_UNIT.gps
     )
     let {previous_investor, current_investor} = (
@@ -25,7 +25,7 @@ export const unit2Form = (unit)=> {
         price: { retail_price, min_retail_price, agreement_price, min_agreement_price},
         characteristics: {axles, color, gvwr, hitch_type, shipping_weight},
         registration_title: {mso, title_number, title_state, title_status},
-        gps: {manufacturer, serial},
+        gps: {category, serial},
         investors: {previous_investor, current_investor},
         locations: {location, physical_as_of, location_related},
     })

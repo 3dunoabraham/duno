@@ -2,7 +2,7 @@ import { PostData } from "@/scripts/helpers/fetchHelper";
 // ReactFunctionComponent
 export const PostButton =({
     method = "POST",
-    theUrl = "https://ims.jinaron.com/api/v1/units/opts/model_styles/",
+    theUrl = "https://ims.jinaron.com/api/v1/units/opts/styles/",
     theData = {label:"testlabel999",description:"testdescrip999"},
 })=>{
     return(<>
