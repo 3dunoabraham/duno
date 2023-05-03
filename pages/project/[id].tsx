@@ -109,7 +109,7 @@ export default function UnitPage({
     if (q_unit.error) return ErrorBlock({err:q_unit.error})
 
     return (<>
-    <Head> <title>{`${id} | IMS`}</title> </Head>
+    <Head> <title>Abraham Duno</title> </Head>
 
     <div className={`px-100 Q_xs_px-3`}>
         <main className="">
@@ -138,7 +138,7 @@ async function fetchUnitPageData() {
     try {
         let {styles,
             statuses, sales_statuses, title_statuses, conditions,
-            orgsList, distributors, dealers, owners,
+            orgsList:[], distributors, dealers, owners,
             categories, subcategories} = await fetchUnitOptsObj()
         // let styles = (
         //     await fetchJsonArray(API_UNIT_OPTS_BASE+"styles", "Model Styles")
@@ -155,7 +155,7 @@ async function fetchUnitPageData() {
         return {
             styles,
             statuses, sales_statuses, title_statuses, conditions,
-            orgsList, distributors, dealers, owners,
+            orgsList:[], distributors, dealers, owners,
             categories, subcategories,
         }
     } catch (err) {

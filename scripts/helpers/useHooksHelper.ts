@@ -27,6 +27,8 @@ export const useArrayMapPlus = (objArray,propKey,theValue,valueKey) =>{
     ), [objArray]);
     const useHooksMap = useMap<string, any>(mapArray)
     const theObj = useMemo(()=>{ 
+        if ((!objArray )) return null
+        if ((!objArray.length )) return null
         if ((!objArray && !objArray.length) || !theValue) return null
         return objArray.filter(object => (object[valueKey] == theValue))[0]
     } , [objArray,theValue]);

@@ -16,6 +16,7 @@ import { sortIDDesc } from '@/scripts/helpers/type/arrayHelper';
 import { obj2MapArray } from '@/scripts/helpers/type/objectHelper';
 import { DEFAULT_UNITS_ARRAY } from '@/scripts/constants/unit';
 import { InventoryPageComponent } from '@/components/pages/portfolio';
+import { FooterLayout } from '@/components/templates/FooterLayout'
 // ReactFunctionPageComponent
 export default function InventoryPage({
     unitsArray, optsArrayObj, filtersObj, filtersRefObj, online,
@@ -88,14 +89,14 @@ export default function InventoryPage({
             <div className="flex">
                 <h1 className="pt-6 tx-bold-5 flex-1 "> Abraham Duno's Projects </h1>
                 <div className="flex-center ">
-                    <a  href="/project/add" className="ims-button-primary clickble">+ New Idea</a>
+                    <a  href="/project/add" className="ims-button-primary clickble">+ Request Project</a>
                 </div>
             </div>
             <hr className="my-2"/>
             <SidebarFilterToolbar {...{
                 filtersMap, filtersMap_do, configObj:filtersObj,
             }}/>
-            <div className="mt-4 mb-150 h-100 " >
+            <div className="mt-4 mb-8 h-100 " >
                 {zzz && <LoadingInventory /> }
                 {(!q__unitsArray || !q__unitsArray.length) && !zzz && <>
                     <div className='tx-xl opaci-10 tx-ls-5 pt-100 pb-8 tx-center '>No Units Found</div>
@@ -103,7 +104,10 @@ export default function InventoryPage({
                 {!!q__unitsArray && !!q__unitsArray.length && !zzz &&<>
                     <InventoryPageComponent filteredUnits={filteredUnits} />
                 </>}
+                <FooterLayout />
             </div>
+            
+
         </main>
     </div>
     </>)

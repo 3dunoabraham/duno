@@ -163,7 +163,7 @@ export const UnitBottomForm =({
                             label={inputsMapObj["locations"]._.label}
                             inputsMapObj={inputsMapObj["locations"]} editMode={false} 
                             values={values["locations"]}   
-                            optsObj={{company:optMapObj.orgsList,customer:parsed_customersArray}} 
+                            optsObj={{company:[],customer:[]}} 
                         />
                     }
                 </div>

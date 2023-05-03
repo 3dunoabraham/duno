@@ -19,7 +19,7 @@ export const Layout = ({
 }: ComponentProps)=>{
     return (<>
 	<Head>
-		<title>{title ? `${title} | IMS` : 'IMS'}</title>
+		<title>Abraham Duno</title>
 		<meta name="description" content="Abraham Duno Portfolio" />
 		{/* <link rel="icon" href={"/icons/favicon.ico"} /> */}
 		<link rel="icon" href={isDevEnvironment ? "/icons/dev.ico" : "/icons/favicon.ico"} />
