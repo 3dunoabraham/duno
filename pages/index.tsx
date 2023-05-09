@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 
 import { AppContext } from "@/scripts/contexts/AppContext"
+import { FaExternalLinkAlt } from "react-icons/fa";
 // ReactFunctionPageComponent
 export default function IndexPage()
 {
@@ -13,7 +14,8 @@ export default function IndexPage()
         "https://duno.vercel.app"
     ) 
     return ( 
-    <div className=" flex-center h-100" style={{background:"linear-gradient(-45deg, #FFf9e6, #FFFFFF, #FFf9e6)"}} >
+    <div className=" flex-center h-100" //style={{background:"linear-gradient(-45deg, #Fefefe, #FFFFFF, #Fefefe)"}} 
+    >
         <main className=" ">
             <div className="mb-8 tx-xl tx-bold-3 flex-col" >
                 {!!loadingNewPage &&
@@ -38,18 +40,18 @@ export default function IndexPage()
             </div>
             {<div className="flex-col-r mt-8 ">
                 <div className="tx-gray px-4   opaci-chov--50 pa-2    bord-r-8 ma-2">
-                    <a href="https://twitter.com/tresduno" target="_blank"  className=" pa-2  tx-" onClick={()=>{s__loadingNewPage(true)}} >
-                        <div className="tx-ls-1 tx-lgx">Contact Me </div>
-                        <p className="mt-1 tx-">on twitter @tresduno</p>
+                    <a href="https://duno.vercel.app" target="_blank"  className=" pa-2  tx-" >
+                        <div className="tx-ls-1 tx-lgx">View Portfolio <FaExternalLinkAlt /> </div>
+                        <p className="mt-1 tx-">Latest Projects</p>
                     </a>
                 </div>
                 <div className="flex-wrap  ">
                     <div className="flex-wrap flex-align-start  ">
-                        <Link href="/portfolio">
+                        <Link href="/posts">
                             <a   className="px-4 tx-white tx-lg opaci-chov--75 py-2" onClick={()=>{s__loadingNewPage(true)}} 
                                 style={{background:"linear-gradient(-45deg, #FF9F66, #FF9F66)"}}
                             >
-                                <h2 className="">Portfolio &rarr;</h2><p className="">Latest Projects</p>
+                                <h2 className="">Posts &rarr;</h2><p className="">Enter Blog</p>
                             </a>
                         </Link>
                         {false && <Link href="/categories">

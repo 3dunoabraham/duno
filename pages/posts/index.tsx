@@ -31,7 +31,7 @@ export default function InventoryPage({
     // },[])
     useEffect(()=>{
         if (!online) {sq__unitsArray(DEFAULT_UNITS_ARRAY);s__zzz(false); return}
-        fetchJsonArray("https://duno.vercel.app/projects.json").then((res:any)=>{sq__unitsArray(res);s__zzz(false)})
+        fetchJsonArray("https://duno.vercel.app/posts.json").then((res:any)=>{sq__unitsArray(res);s__zzz(false)})
     },[])
 
 
@@ -77,7 +77,7 @@ export default function InventoryPage({
 
     /****** HTML ******/
     return (<>
-    <Head> <title>Portfolio | Abraham Duno</title> </Head>
+    <Head> <title>Blog | Abraham Duno</title> </Head>
 
     <div className="flex w-100 h-100  noverflow-y">
         {/* <div className="Q_md_x ims-bg-faded  box-shadow-2 pos-rel ">
@@ -85,11 +85,11 @@ export default function InventoryPage({
         </div> */}
 
         <main className="Q_xs_md_px-3 px-100 w-100 ">
-            <BreadCrumbs pages={[["/portfolio","Portfolio"]]} />
+            <BreadCrumbs pages={[["/posts","Posts"]]} />
             <div className="flex">
-                <h1 className="pt-6 tx-bold-5 flex-1 "> Abraham Duno's Projects </h1>
+                <h1 className="pt-6 tx-bold-5 flex-1 "> Abraham Duno&apos;s Blog </h1>
                 <div className="flex-center ">
-                    <a  href="/project/add" className="ims-button-primary clickble">+ Request Project</a>
+                    <a target='_blank' href="https://twitter.com/tresduno" className="ims-button-primary clickble">Contact Me</a>
                 </div>
             </div>
             <hr className="my-2"/>
