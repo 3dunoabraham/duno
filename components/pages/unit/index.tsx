@@ -19,7 +19,7 @@ import { parseChangedDataObj, PostData } from '@/scripts/helpers/fetchHelper';
 import { AppContext } from '@/scripts/contexts/AppContext';
 import { unit2Form } from '@/scripts/helpers/type/unitHelper';
 export interface UnitPageComponentProps {
-    unit?: IUnit;
+    unit?: any;
     optMapObj?: any; docsArray?: any; notesArray?: any;logsArray?: any;
     isLoadingRefetching?: any;editMode?: any;
     refetch?: (deps?) => void;s__editMode?: (deps?) => void;
@@ -122,7 +122,7 @@ export const UnitPageComponent = ({
         <div className="flex-between Q_xs_md_flex-col">
             <div className="flex-col pt-3  ">
                 <h1 className="tx-bold-5 ims-tx-dark flex ">
-                    {`${editMode ? 'Edit' : 'Project - '} ${unit.slug}`}
+                    {`${unit.title}`}
                 </h1>
             </div>
 
